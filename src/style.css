@@ -11,8 +11,6 @@ li{
 	float:left;
 	font-family: "Alumni Sans";
 	list-style: none;
-
-
 }
 li:hover a {
 	color:#A925F3;
@@ -27,15 +25,6 @@ a{
 	font-weight: bold;
 	padding: 10px 20px;
 	margin:10px 20px;
-}
-.main-header_logorrss{
-	width: 60px;
-	height:50px;
-	margin-top:0;
-	padding-top:0;
-	margin-left: -55px;
-
-
 }
 #background-image{
 	background-image: url("img/bienvenida.png");
