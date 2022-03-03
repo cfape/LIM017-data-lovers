@@ -8,10 +8,11 @@
     <link rel="icon" href="totoro_ico.ico">
     <link rel="stylesheet" type="text/css" href="style.css">    
 <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Shizuru&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a0b1ac6e13.js" crossorigin="anonymous"></script>
-
     <!-- Fonts -->
     <!--<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">-->
 </head>
@@ -20,47 +21,54 @@
 	<header id="main-header">
         
     <nav>
-        <img class="main-header__image_logo" src="img/logo_dataaa.png" alt="Logo de Data Lovers"></img>               
-       <!-- <img class="main-header__image_logo" src="img/logo2.png" alt="Logo de Data Lovers"></img>-->
-    <button class="nav_toogle"> <i class="menu-bars-cel"></i></button>
+        <a href="#" class="link-image">
+        <!--img class="header__image_logo" src="img/logo_dataaa.png" alt="Logo de Data Lovers"></img>--> 
+        </a>      
+      <img class="header__image_logo" src="img/logo2.png" alt="Logo de Data Lovers"></img>
+    <input type="checkbox" id="check">
+    <label for="check" class="check_boton">
+        <i class="fa-solid fa-bars"></i>
+        </label>
+      
       <ul class="nav_menu">
-        <li class="list__header"><a href="#">Inicio</a></li>
-        <li class="list__header"><a href="#">Filmografía</a></li>
-        <li class="list__header"><a href="#">Personajes</a></li>
-        <li class="list__header"><a href="#">Productores</a></li>
-        <li class="list__header"><a href="#">Datos curiosos</a></li>
-        <li class="list__header"><a href="https://www.facebook.com/GhibliStudios/" target="_blank"><img src="img/fb.png" alt="Facebook" class="main-header_logorrss"></img></a></li>
-        <li class="list__header"><a href="https://www.instagram.com/ghibliusa/?hl=es" target="_blank"><img src="img/ig.png" alt="Instagram" class="main-header_logorrss"></img></a></li>
-        
+        <li class="list__header"><a href="#" class="nav_ul_list__a">Inicio</a></li>
+        <li class="list__header"><a href="#" class="nav_ul_list__a">Filmografía</a></li>
+        <li class="list__header"><a href="#" class="nav_ul_list__a">Personajes</a></li>
+        <li class="list__header"><a href="#" class="nav_ul_list__a">Productores</a></li>
+        <li class="list__header"><a href="#" class="nav_ul_list__a">Datos curiosos</a></li>
+       <li class="list__header"><a href="https://www.facebook.com/GhibliStudios/" target="_blank" class="nav_ul_list__a"><img src="img/fb.png" alt="Facebook" id="main-header_logorrss"></img></a></li>
+        <li class="list__header"><a href="https://www.instagram.com/ghibliusa/?hl=es" target="_blank" class="nav_ul_list__a"><img src="img/ig.png" alt="Instagram" id="main-header_logorrss"></img></a></li>
     </ul>
 
 </nav>
 </header>
-
-<section id="background-image">
-    
-
+<section id="section_welcome">
 <h2 id="text-welcome1">¡Bienvenidos! </h2>
-<h3 id="text-welcome2">Aquí encontrarás toda la información referente a este gran estudio japonés que tiene grandes y memorables producciones en su haber. </h3>
-<center><input type="button" value="Ingresar"></input></center>
+<h3 id="text-welcome2">Aquí encontrarás toda la información referente a este gran estudio japonés</h3>
+<h3 id="text-welcome3">que tiene grandes y memorables producciones en su haber. </h3></br>
+<center><a href="#contenedor-texto"><input type="button" value="Leer más" id="button_start" ></input></a></center>
 </section>
 <br>
-<div id="contenedor-texto">
+</br>
+
+<div id="contenedor-texto"> 
 <section id="contenido-studio">
     <aside>
         <br><img id="logo" src="img/logo1.png"/></br></br>
         <table id= "table-info"  style="width:100%">
            <tr>
+               <th colspan="2">Studio Ghibli, Inc.</th></tr>
+               
             <td><b>Industria</b></td>
-            <td><p>Películas de animación</p>
-                <p>Videojuegos</p>
-                <p>Anuncios de televisión</p>
+            <td>Películas de animación
+                Videojuegos
+                Anuncios de televisión</p>
             </td>
             </tr>
-            <tr>
+           
                 <td><b>Fundación</b></td>
                 <td>15 de junio de 1985</td>
-            </tr>
+           
         <tr>
             <td><b>Fundador</b></td>
             <td><p>Hayao Miyazaki</p>
@@ -99,16 +107,19 @@
    
     </aside>
 </section>
-<section id="contenido-texto">
+<section id="contenido-biography">
     <div class="div_search" align="right">
         <input type ="text"placeholder="Escribe lo que quieras buscar" class="section-input_text"></input>
         <img src="img/search.png" class="div-img-search">
+        
     </div>
-    <p>Studio Ghibli (スタジオジブリ Sutajio Jiburi?) es un estudio japonés de animación, considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad.1​
+    <br>
+    <p id="section-p__biography">Studio Ghibli (スタジオジブリ Sutajio Jiburi?) es un estudio japonés de animación, considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad.1​
         El estudio es mejor conocido por sus largometrajes animados y también ha producido varios cortometrajes, comerciales de televisión y una película para televisión. Fue fundado el 15 de junio de 1985 por los directores Hayao Miyazaki e Isao Takahata y el productor Toshio Suzuki , después del éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984). Studio Ghibli también ha colaborado con estudios de videojuegos en el desarrollo visual de varios videojuegos.
         Seis de las películas de Studio Ghibli se encuentran entre las 10 películas de anime más taquilleras realizadas en Japón, siendo El Viaje de Chihiro (2001) la segunda más alta, recaudando más de 360 millones de dólares en todo el mundo. Muchos de sus trabajos han ganado el premio Animage Anime Grand Prix, y cuatro han ganado el Premio de la Academia Japonesa de Animación del Año. Cinco de las películas de Studio Ghibli han recibido nominaciones al Óscar. El Viaje de Chihiro ganó el Oso de Oro en 2002 y el Premio de la Academia a la Mejor Película de Animación en 2003. Totoro, un personaje de Mi vecino Totoro, es la mascota del estudio.
-        El 3 de agosto de 2014, Studio Ghibli detuvo temporalmente la producción tras el retiro de Miyazaki. En febrero de 2017, Toshio Suzuki anunció que Miyazaki había vuelto a salir de su retiro para dirigir un nuevo largometraje,¿Cómo vives?]], con Studio Ghibli.</p>
+        El 3 de agosto de 2014, Studio Ghibli detuvo temporalmente la producción tras el retiro de Miyazaki. En febrero de 2017, Toshio Suzuki anunció que Miyazaki había vuelto a salir de su retiro para dirigir un nuevo largometraje con Studio Ghibli.</p>
     </p>
+    <br> </br>
     <ul>
 <li class="list__movies">1. Nausicaä del Valle del Viento (1984)</li></br>
 <li class="list__movies">2. El castillo en el cielo (1986)</li></br>
@@ -246,8 +257,39 @@ Dirigida por Goro Miyazaki, es una adaptación de la novela de Diana Wynne Jones
 La historia se desarrolla en el orfanato de St. Morwald’s, donde la joven Earwig disfruta viviendo, al contrario que la mayoría de los huérfanos.
 
 </p>
+<br>
+<br>
+<b>Galería de películas</b>
+<br>
+<br>
 
-
+  
+    <section class="galery_movies">
+<div class="colum_movies">
+<a href=""><img src="img/1979-cagliostro-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1984-nausicaa-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1986-castillo-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1988-totoro-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1988-tumba-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1989-kiki-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1991-recuerdos-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1992-porco-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1993-puedo-escuchar-el-mar-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1994-pompoko-cartel.jpg" alt="" class="div_img_movie" /></a>
+<a href=""><img src="img/1995-susurros-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/1997-mononoke-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/1999-yamada-cartel.jpg" alt=""class="div_img_movie"/></a>
+<a href=""><img src="img/2001-chihiro-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/2002-haru-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/2004-ambulante-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/2006-terramar-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/2008-ponyo-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/2010-arrietty-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/2011-colina-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/2013-kaguya-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/2013-viento-cartel.jpg" alt="" class="div_img_movie"/></a>
+<a href=""><img src="img/2014-marnie-cartel.jpg" alt="" class="div_img_movie"/></a>
+</div>
 </section>
 </div>
 	<footer id="main-footer">
