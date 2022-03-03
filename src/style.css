@@ -203,7 +203,6 @@ td		{
 	display: flex;
 	text-align: justify;	
 	margin-left: 40px;
-
 }
 	
 #contenido-biography{
@@ -232,7 +231,14 @@ td		{
 
 /*div de ctálogo de imágenes*/
 .div_img_movie{
+	
 	width:200px;
 	padding: 20px 20px;
+	margin-left: 60px;/*se le da centrado a la galeria de imágenes */
 	/*border: 5px solid #000;*/
+}
+#galery_movies{
+	font-family: 'Short Stack', cursiva;
+	font-weight: bold;
+	text-align: center;
 }
