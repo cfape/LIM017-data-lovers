@@ -64,62 +64,6 @@ padding: 7px 13px;
 .check_boton{
 	font-size: 50px;
 	color: #fff;
-}
-:root {
-    --white: #FFFFFF;
-    --whitedark: #F6EFEF;
-    --darkpurple: #A925F3;
-    --black: #000000;
-	--yellow: #ffd43b;
-	--orange: #ffa94d;
-    }
-
-
-
-
-.nav_menu{
-	float: right;
-	margin-right: 20px;
-}
-.header__image_logo{
-	width: 13em;
-	position: absolute;
-}
-.list__header {
-	font-family: "Alumni Sans", cursiva;
-	font-size: 12px;
-	list-style: none;
-	width: max-content;/*no corta el contenido que tiene más de 1 palabra*/
-	display:inline-block;
-	line-height: -780px;
-	margin: 0 5px;
-}
-.list__header:hover a {
-	color:var(--darkpurple);
-	transition: 0.6s;
-
-}
-nav ul li a{
-	text-decoration: none;
-	font-size: 30px;
-	color: var(black);
-	font-weight: bold;
-	padding: 10px 40px;
-	margin: 1px -1px;
-
-}
-
-.main-header_logorrss{
-	width: 60px;
-	height:50px;
-	margin-top:0;
-	padding-top:0;
-	margin-left: -1px;
-
-}
-.check_boton{
-	font-size: 30px;
-	color: var(--black);
 	float: right;
 	line-height: 80px;
 	margin-right: 50px;
@@ -180,7 +124,7 @@ li a.hover{
 #check:checked ~ ul {
     left:0;
   }
-
+}
 
 #text-welcome1{
 	font-family: "Boogaloo", cursiva;
@@ -297,4 +241,9 @@ td		{
 	font-family: 'Short Stack', cursiva;
 	font-weight: bold;
 	text-align: center;
+}
+
+.img_gif_castle{
+	width: 100%;
+	height: 50%;
 }
