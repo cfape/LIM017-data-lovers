@@ -6,168 +6,252 @@
 	--yellow: #ffd43b;
 	--orange: #ffa94d;
     }
-
-body{
-	display:flex-auto;
-}
-
-header{
-	position: fixed; /*se fija la position del header*/
-	width: 100%;
-}
-nav {
-	background: linear-gradient(to bottom right, var(--yellow), var(--orange));/* #F6EFEF*/
-	margin-top:-10px;
-	height: 80px;
-
-}
-.nav_menu{
-	float: right;
-	margin-right: 20px;
-}
-.header__image_logo{
-	width: 13em;
-	position: absolute;
-}
-.list__header {
-	font-family: "Alumni Sans", cursiva;
-	font-size: 12px;
-	list-style: none;
-	width: max-content;/*no corta el contenido que tiene más de 1 palabra*/
-	display:inline-block;
-	line-height: -780px;
-	margin: 0 5px;
-}
-.list__header:hover a {
-	color:var(--darkpurple);
-	transition: 0.6s;
-
-}
-nav ul li a{
-	text-decoration: none;
-	font-size: 30px;
-	color: var(black);
-	font-weight: bold;
-	padding: 10px 40px;
-	margin: 1px -1px;
-
-}
-
-.main-header_logorrss{
-	width: 60px;
-	height:50px;
-	margin-top:0;
-	padding-top:0;
-	margin-left: -1px;
-
-}
-.check_boton{
-	font-size: 30px;
-	color: var(--black);
-	float: right;
-	line-height: 80px;
-	margin-right: 50px;
-	cursor: pointer;
-	display: none; /*solo tiene que verse en dispositivos pequeños*/
-}
-#check{
-	display: none;
-}
-#background_image{
-	/*filter: sepia(60%);*/
-	background-image: url("img/bienvenida.png") ;
-
-    padding: 14em ;
-
-}
-/*para tablets*/
-@media (max-width:950px){
-	a{
-		padding-left: 20px;
+	*{
+		padding: 0;
+		margin: 0;
+		text-decoration: none;
+		list-style: none;
+		box-sizing: border-box;
+	  }
+	body{
+		display:grid;
+		grid-auto-columns: auto;
 	}
-	nav ul li a{
-		font-size: 16px;
-}
-}
-@media (max-width:850px){
-	.check_boton{
-		display: block;
+	
+	header{
+		position: fixed; /*se fija la position del header*/
+		width: 100%;
+	}
+	
+	nav {
+		background: linear-gradient(to bottom right, #ff8d3f, #af1c1c );/* */
+		height: 80px;
+	
+	}
+	.link-image{
+		position: absolute;
+		padding: 0 50px;
+	  }
+	 .header__image_logo{
+		width: 13em;
+	
 	}
 	.nav_menu{
-		position: fixed;
+		float: right;
+		margin-right: 20px;
+	}
+	
+	.list__header {
+		display: inline-block;
+		line-height: 80px;
+		margin: 0 5px;
+	}
+	.nav_ul_list__a{
+	font-family: "Alumni Sans", cursiva;
+	font-weight: bold;
+	color:#fff;
+	font-size: 28px;
+	width: max-content;/*no corta el contenido que tiene más de 1 palabra*/
+	padding: 7px 13px;
+	}
+	.list__header:hover a {
+		color:#A925F3;
+		transition: 0.6s;
+	
+	}
+	
+	/*botones del header*/
+	#main-header_logorrss{ 
+		width: 70%;
+		height:60px;
+		margin-top:0;
+		padding-top:20px;
+		margin-left: -1px;
+		
+	}
+	.check_boton{
+		font-size: 50px;
+		color: #fff;
+		float: right;
+		line-height: 80px;
+		margin-right: 50px;
+		cursor: pointer;
+		display: none; /*solo tiene que verse en dispositivos pequeños*/
+	}
+	
+	#check{
+		  display: none;
+		}
+	#section_welcome{
+			background: url("img/bienvenida.png") no-repeat;
+			background-size: cover;
+			background-position: center center;
+			height: calc(150vh - 80px);
+		
+		  }
+		  @media (max-width: 1152px) {
+			.link-image{
+			  padding-left: 20px;
+			}
+			#main-header_logorrss{
+				width: 100%;
+			}
+			nav ul li a{
+			  font-size: 16px;
+			}
+		  }
+		  @media (max-width: 998px) {
+			.check_boton{
+			  display: block;
+			}
+	
+	.nav_menu{
+		position:fixed;
 		width: 100%;
 		height: 100vh;
-		background:var(--darkpurple);
+		background: linear-gradient(to bottom right, #C0C0C0,#696969 );
+		color: #fff;
 		top: 80px;
-left:-100%;
-text-align: center;
-transition: all .5s;
+		left:-100%;
+		text-align: center;
+		transition: all .8s;
+	  }
+	
+	.list__header{
+		display:block;
+		margin:50px 0;
+		line-height:30px;
 	}
-.list__header{
-	display:block;
-	margin:50px 0;
-	line-height:30px;
-}
-}
-#text-welcome1{
-	font-family: "Boogaloo", cursiva;
-	text-align: center;
-	font-size: 170px;
-	color: var(--white);
-	margin-top:0.2em;
-	text-shadow: 6px 9px  rgba(0, 0, 0, 0.9);
-}
-
-
-#text-welcome2{
-	font-family: "Boogaloo", cursiva;
-	color: var(--white);
-	text-align: center;
-	font-size: 30px;
-	text-shadow: 2px 5px  rgba(0, 0, 0, 0.9);
-	margin-top:-4em;
-}
-#logo{
-	width: 20em;
-	height: 15em;
-	padding-left: 40px;
-}
-footer{
-    font-family: "Alumni Sans";
-    text-align: center;
-	font-size: 20px;
-}
-#table-info {
-	display: grid;
-	text-align: left;
-	padding-left: 65px;
-	text-align: justify;
-	font-family: 'Comic Sans MS';
-
-}
-#contenido-texto{
-	text-align: justify;
-	margin-left: 40px;
-	margin-right: 40px;
-}
-
-#contenedor-texto{
-	display: flex;
-}
-.list__movies {
-
-	font-size: 12px;
-	list-style: none;
-}
-.div-img-search{
-	width: 4%;
-	align-items: right;
-	cursor: pointer;
-}
-.section-input_text{
-	border-radius: 10em;
-	width:24em;
-    height:2em;
-	border: 4px var(--orange) outset;
-
-}
+	.nav_ul_list__a{
+		font-size: 20px
+	  }
+	li a.hover{
+		background: none;
+		color: red;
+	  }
+	#check:checked ~ ul {
+		left:0;
+	  }
+	}
+	
+	#text-welcome1{
+		font-family: "Boogaloo", cursiva;
+		text-align: center;
+		font-size: 170px;
+		color: #fff;
+		margin-top:1.5em;
+		text-shadow: 6px 9px  rgba(0, 0, 0, 0.9);
+	}
+	
+	
+	#text-welcome2{
+		font-family: "Boogaloo", cursiva;
+		color: #000;
+		text-align: center;
+		font-size: 30px;
+		text-shadow: 2px 5px  rgba(255, 252, 252, 0.9);
+		margin-top:0;
+	}
+	#text-welcome3{
+		font-family: "Boogaloo", cursiva;
+		color: #000;
+		text-align: center;
+		font-size: 30px;
+		text-shadow: 2px 5px  rgba(255, 252, 252, 0.9);
+		margin-top:0;
+	}
+	#button_start{
+		font-family: "Boogaloo", cursiva;
+		background-color: #f56c57;
+		color: white;
+		border-radius: 20px;
+		font-size: 30px;
+		width: 160px;
+		height: 80px;
+		cursor: pointer;
+	}
+	#logo{
+		width: 20em;
+		height: 15em;
+		padding-left: 40px;
+	}
+	footer{
+		font-family: "Alumni Sans";
+		text-align: center;
+		font-size: 20px;
+	}
+	#table-info {
+		/*display: grid;*/
+		
+		padding-left: 5px;
+		padding-right: 5px;
+		text-align: justify;
+		font-family: 'Short Stack', cursiva;
+		font-size: 26px;
+		border: 4px solid #2f2f28;
+		background-color: #f0eff0
+	}
+	div section aside img {
+		margin-left: -30px;
+		margin-right:41px;
+	}
+	th{
+		text-align: center;
+		color: #fff;
+		background-color: #af1c1c;
+		}
+		
+	td		{
+			padding-top:15px;/*mantiene separado los textos*/
+			font-size: 16px;
+			}
+	
+	#contenedor-texto 
+	{
+		display: flex;
+		text-align: justify;	
+		margin-left: 40px;
+	}
+		
+	#contenido-biography{
+			font-family: 'Short Stack', cursiva;
+			padding: 20px 20px;
+		}
+	
+	.list__movies {
+		
+	
+		list-style: none;
+	}
+	.div-img-search{
+		width: 4%;
+		
+		cursor: pointer;
+	}
+	.section-input_text{
+		border-radius: 10em;
+		width:24em;
+		  height:2em;
+		border: 4px #ffa94d outset;
+	
+	}
+	
+	
+	/*div de ctálogo de imágenes*/
+	.div_img_movie{
+		
+		width:200px;
+		padding: 20px 20px;
+		margin-left: 60px;/*se le da centrado a la galeria de imágenes */
+		/*border: 5px solid #000;*/
+	}
+	#galery_movies{
+		font-family: 'Short Stack', cursiva;
+		font-weight: bold;
+		text-align: center;
+	}
+	
+	.img_gif_castle{
+		width: 100%;
+		height: 50%;
+	}
