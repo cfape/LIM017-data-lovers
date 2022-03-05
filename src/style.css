@@ -9,16 +9,13 @@ body{
 	display:grid;
 	grid-auto-columns: auto;
 }
-
 header{
 	position: fixed; /*se fija la position del header*/
 	width: 100%;
 }
-
 nav {
 	background: linear-gradient(to bottom right, #ff8d3f, #af1c1c );/* */
 	height: 80px;
-
 }
 .link-image{
 	position: absolute;
@@ -26,13 +23,11 @@ nav {
   }
  .header__image_logo{
 	width: 13em;
-
 }
 .nav_menu{
 	float: right;
 	margin-right: 20px;
 }
-
 .list__header {
 	display: inline-block;
 	line-height: 80px;
@@ -49,9 +44,7 @@ padding: 7px 13px;
 .list__header:hover a {
 	color:#A925F3;
 	transition: 0.6s;
-
 }
-
 /*botones del header*/
 #main-header_logorrss{ 
 	width: 70%;
@@ -70,7 +63,6 @@ padding: 7px 13px;
 	cursor: pointer;
 	display: none; /*solo tiene que verse en dispositivos pequeños*/
 }
-
 #check{
 	  display: none;
 	}
@@ -96,7 +88,6 @@ padding: 7px 13px;
 		.check_boton{
 		  display: block;
 		}
-
 .nav_menu{
     position:fixed;
     width: 100%;
@@ -108,7 +99,6 @@ padding: 7px 13px;
     text-align: center;
     transition: all .8s;
   }
-
 .list__header{
 	display:block;
 	margin:50px 0;
@@ -125,7 +115,6 @@ li a.hover{
     left:0;
   }
 }
-
 #text-welcome1{
 	font-family: "Boogaloo", cursiva;
 	text-align: center;
@@ -134,8 +123,6 @@ li a.hover{
 	margin-top:1.5em;
 	text-shadow: 6px 9px  rgba(0, 0, 0, 0.9);
 }
-
-
 #text-welcome2{
 	font-family: "Boogaloo", cursiva;
 	color: #000;
@@ -197,7 +184,6 @@ td		{
 		padding-top:15px;/*mantiene separado los textos*/
 		font-size: 16px;
 		}
-
 #contenedor-texto 
 {
 	display: flex;
@@ -209,10 +195,8 @@ td		{
 		font-family: 'Short Stack', cursiva;
 		padding: 20px 20px;
 	}
-
 .list__movies {
 	
-
 	list-style: none;
 }
 .div-img-search{
@@ -225,10 +209,7 @@ td		{
 	width:24em;
   	height:2em;
 	border: 4px #ffa94d outset;
-
 }
-
-
 /*div de ctálogo de imágenes*/
 .div_img_movie{
 	
@@ -243,7 +224,6 @@ td		{
 	font-weight: bold;
 	text-align: center;
 }
-
 .img_gif_castle{
 	width: 100%;
 	height: 50%;
