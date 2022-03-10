@@ -20,6 +20,17 @@ for (let i=0; i<films.length; i++) {
 mainmovies.innerHTML+=movieGhibli;
 }
 
+const yearMovie= data.films
+const yearMoviesPublished = document.querySelector("#div_search");
+for (let i=0; i<yearMovie.length; i++) {
+    let yearMovieTittle = `
+    <select id="input_publication" class="section-input_text">
+    <option value="todos" select>Selecciona</option>
+    <option value="">${yearMovie[i].release_date}</option>
+    </select>
+`
+yearMoviesPublished.innerHTML+=yearMovieTittle;
+}
 /*const searchMovie = document.querySelector("#div_search_public");
 const yearPublication =data.films;
 for (let i=0; i<yearPublication.length; i++) {
