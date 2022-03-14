@@ -9,17 +9,17 @@ for (let i=0; i<films.length; i++) {
 <a href=""><img src=${films[i].poster} alt="" class="div_img_movie" /></a><br>
 <b><h3 class="contenedor_section_h3__movti"> ${films[i].title}</h3></b> </br>
 <div class="div_contenido_movies"><b>Fecha de publicación: </b>${films[i].release_date} </br>
- <b>Director: </b>${films[i].director} </br>
- <b>Productor: </b>${films[i].producer} </br>
- <b>Puntuación: </b>${films[i].rt_score}</br>
- </div>
- </div>
- </section>
- 
+<b>Director: </b>${films[i].director} </br>
+<b>Productor: </b>${films[i].producer} </br>
+<b>Puntuación: </b>${films[i].rt_score}</br>
+</div>
+</div>
+</section>
+
 `
 mainmovies.innerHTML+=movieGhibli;
 }
-/declarando variables para el año de publicación/
+/*declarando variables para el año de publicación*/
 const yearMovie= data.films
 const yearMoviesPublished = document.querySelector("#input_publication");
 for (let i=0; i<yearMovie.length; i++) {
@@ -29,7 +29,7 @@ for (let i=0; i<yearMovie.length; i++) {
 yearMoviesPublished.innerHTML+=yearMovieTittle;
 }
 
-/declarando variables para buscar el productor/
+/*declarando variables para buscar el productor*/
 const nameProductor= data.films
 const nameProductors = document.querySelector("#input_publication1");
 for (let i=0; i<nameProductor.length; i++) {
