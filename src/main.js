@@ -2,57 +2,115 @@ import data from './data/ghibli/ghibli.js';
 const films = data.films;
 const mainmovies = document.querySelector("main");
 
-for (let i=0; i<films.length; i++) {
-    let movieGhibli = `
-<section id="contenido-peliculas"><br><br><br><br><br><br><br>
+function showInfoMovies(filmsPublished) {
+    mainmovies.innerHTML = "";
+    for (let i = 0; i < filmsPublished.length; i++) {
+        let movieGhibli = `
+<div id="contenido-peliculas"><br><br><br><br><br><br><br>
 <div class="contenedor_movies">
-<a href=""><img src=${films[i].poster} alt="" class="div_img_movie" /></a><br>
-<b><h3 class="contenedor_section_h3__movti"> ${films[i].title}</h3></b> </br>
-<div class="div_contenido_movies"><b>Fecha de publicación: </b>${films[i].release_date} </br>
- <b>Director: </b>${films[i].director} </br>
- <b>Productor: </b>${films[i].producer} </br>
- <b>Puntuación: </b>${films[i].rt_score}</br>
+<a href=""><img src=${filmsPublished[i].poster} alt="" class="div_img_movie" /></a><br>
+<b><h3 class="contenedor_section_h3__movti"> ${filmsPublished[i].title}</h3></b> </br>
+<div class="div_contenido_movies"><b>Fecha de publicación: </b>${filmsPublished[i].release_date} </br>
+ <b>Director: </b>${filmsPublished[i].director} </br>
+ <b>Productor: </b>${filmsPublished[i].producer} </br>
+ <b>Puntuación: </b>${filmsPublished[i].rt_score}</br>
  </div>
  </div>
  </section>
- 
 `
-mainmovies.innerHTML+=movieGhibli;
-}
+        mainmovies.innerHTML += movieGhibli;
 
-const yearMovie= data.films
-const yearMoviesPublished = document.querySelector("#div_search");
-for (let i=0; i<yearMovie.length; i++) {
+    }
+}
+showInfoMovies(films);
+/*declarando variables para el año de publicación*/
+const yearMovie = films.map((item) => { return item.release_date });
+const moviePremier = yearMovie.filter((item, index) => {
+    return yearMovie.indexOf(item) === index;
+})
+//console.log(moviePubli);
+const yearMoviesPublished = document.querySelector("#input_publication0");
+for (let i = 0; i < moviePremier.length; i++) {
     let yearMovieTittle = `
-    <select id="input_publication" class="section-input_text">
-    <option value="todos" select>Selecciona</option>
-    <option value="">${yearMovie[i].release_date}</option>
-    </select>
-`
-yearMoviesPublished.innerHTML+=yearMovieTittle;
+    <option value="${moviePremier[i]}">${moviePremier[i]}</option>
+`/*el value vendría a ser moviepremier que representa al filtro de las peliculas con sus índices*/
+    yearMoviesPublished.innerHTML += yearMovieTittle;
 }
-/*const searchMovie = document.querySelector("#div_search_public");
-const yearPublication =data.films;
-for (let i=0; i<yearPublication.length; i++) {
-    let yearMovie = `<div id="div_search_public" class="div_search">
-    <option value="todos" disabled select>Selecciona</option></select>
-    `
-    searchMovie.innerHTML+=yearMovie;*/
+/*declarando variables para buscar el productor*/
+const nameProducer = films.map((item) => { return item.producer });
+const movieProducer = nameProducer.filter((item, index) => {
+    return nameProducer.indexOf(item) === index;
+});
 
-/*import { example } from './data.js';
-// import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+const nameProductors = document.querySelector("#input_publication1");
+for (let i = 0; i < movieProducer.length; i++) {
+    let nameProducerGhibli = `
+    <option value="${movieProducer[i]}">${movieProducer[i]}</option>
+`/*el value vendría a ser moviepmovieProducerremier que representa al filtro de los productores con sus índices*/
+    nameProductors.innerHTML += nameProducerGhibli;
+}
 
-console.log(example, data);
-*/
+//Filtrado ascendente
+const filterOrderAZ = document.querySelector("#input_publication2");
+filterOrderAZ.addEventListener("change", () => {
+       const filmsOrderAsc = films.sort(function (a, b) {
+       if(filterOrderAZ.value === "A-Z"){
+        if (a.title > b.title) {
+            return 1;
+        } if (a.title < b.title) {
+            return -1;
+        }
+    }
+        return 0;
+    })
+    //console.log(filmsOrder);
+showInfoMovies(filmsOrderAsc);   
+})
+//Filtrado descendente
+const filterOrderZA = document.querySelector("#input_publication2");
+filterOrderZA.addEventListener("change", () => {
+       const filmsOrderDes = films.sort(function (a, b) {
+        if(filterOrderAZ.value === "Z-A"){
+        if (a.title < b.title) {
+            return 1;
+        } if (a.title > b.title) {
+            return -1;
+        }
+    }
+        return 0;
+    })
+    //console.log(filmsOrderDes);
+    showInfoMovies(filmsOrderDes);   
+})
 
-/*<div class="contenedor_movie">
-<div><a href=""><img src="img/1984-nausicaa-cartel.jpg" alt="" class="div_img_movie" /></a></div>
-<div><b> 1.	Nausicaä del Valle del Viento (1984)</b> 
+//hacer click a los años de las publicaciones de las peliculas para que aparezcan los titles que se hicieron ese año
+const filterYearPublisher = document.querySelector("#input_publication0");
+filterYearPublisher.addEventListener("change", () => {
+    
+    const filterMoviexYear = films.filter(function(film){
+        console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
+        if (film.release_date === filterYearPublisher.value){
+            return true;
+        }else{
+            return false;
+        }
+    })
+    //console.log(filterMoviexYear);
+    showInfoMovies(filterMoviexYear);
+});
 
-<p>El caso de Nausicaä del Valle del Viento (1984) se considera a veces la primera película de Studio Ghibli, pero lo cierto es que se estrenó un año antes de la fundación del estudio. Creada por Hayao Miyazaki, se inspiró en su propia novela del mismo nombre que publicó dos años antes, en 1982.
-Es considerada como la primera película de Miyazaki dentro de Studio Ghibli, ya que una buena parte del grupo de producción participó en la obra. También porque gracias a su estreno se pudo crear este estudio, por lo que su origen tiene lugar en esta película y el propio estudio la incluye en su colección.
-La historia se sitúa 1.00 años después de una guerra que provocó que las personas malvivan en un bosque contaminado por gases e insectos mutantes a causa de la guerra. Nausicaä, princesa del Valle del Viento, se enfrenta al ejército de Tormekia, un reino gobernado por Lady Kushana, que pretende controlar al “Dios de la Guerra” para eliminar el Bosque Contaminado y los Ohms, unos insectos gigantes que habitan allí. La protagonista luchará por evitarlo. 
-</div>
-</div>*/
+//hacer click a los productores de las peliculas para que aparezcan los titles que produjeron
+const filternameProducer = document.querySelector("#input_publication1");
+filternameProducer.addEventListener("change", () => {
+   
+    const filterMoviexProducer = films.filter(function(name){
+        //console.log(typeof name.producer, typeof filternameProducer.value, name.producer, filternameProducer.value)
+        if (name.producer === filternameProducer.value){
+            return true;
+        }else{
+            return false;
+        }
+    })
+    //console.log(filterMoviexProducer);
+    showInfoMovies(filterMoviexProducer);
+});
