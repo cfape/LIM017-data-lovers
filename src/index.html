@@ -31,7 +31,7 @@
             </label>
             
             <ul class="nav_menu">
-                <audio controls autoplay loop>
+                <audio id= "audio-Totoro" controls loop >
                     <source src="https://vgmsite.com/soundtracks/my-neighbor-totoro-original-soundtrack/rbvjwamt/19%20-%20tonari%20no%20totoro.mp3" type="audio/mp3">
                 </audio>
                 <li class="list__header"><a href="#" class="nav_ul_list__a">Inicio</a></li>
@@ -168,13 +168,18 @@
     <div class="div_search"><b class="div_title_search">Ordenar</b></br>
         <select id="input_publication2" class="section-input_text">
         <option value="todos" disabled selected>Selecciona</option>
-        <option value="A-Z">Nombre A-Z</option>
+        <option value="A-Z" >Nombre A-Z</option>
         <option value="Z-A">Nombre Z-A</option></select>
         
     </div>
-    <div class="div_search"><b class="div_title_search">Búsqueda</b> </br>
-        <input type ="text"placeholder=" 🔎 Escribe lo que quieras buscar" class="section-input_text"></input>
-         <!--<img src="img/search.png" class="div-img-search">-->
+    <div class="div_search"><b class="div_title_search">Ranking Top</b> </br>
+        <select id="input_publication3" class="section-input_text">
+            <option value="todos" disabled selected>Selecciona</option>
+            <option value="top5">Top 5</option>
+            <option value="top10">Top 10</option>
+        </select>
+         <!--<img src="img/search.png" class="div-img-search"><input type ="text"placeholder=" 🔎 Escribe lo que quieras buscar" class="section-input_text"></input>-->
+       
     </div>
 </span>
 

@@ -2,6 +2,14 @@ import data from './data/ghibli/ghibli.js';
 const films = data.films;
 const mainmovies = document.querySelector("main");
 
+/*función que activa música en botón "Leer más"*/
+const audioMusicTotoro = document.querySelector("#button_start");
+audioMusicTotoro.addEventListener("click", () => {
+    const audioTagTotoro = document.querySelector("#audio-Totoro");
+    audioTagTotoro.play();
+});
+
+/*funciones para mostrar contenido de películas */
 function showInfoMovies(filmsPublished) {
     mainmovies.innerHTML = "";
     for (let i = 0; i < filmsPublished.length; i++) {
@@ -23,6 +31,8 @@ function showInfoMovies(filmsPublished) {
     }
 }
 showInfoMovies(films);
+
+//declaración de variables para que aparezcan dentro de los selects del HTML
 /*declarando variables para el año de publicación*/
 const yearMovie = films.map((item) => { return item.release_date });
 const moviePremier = yearMovie.filter((item, index) => {
@@ -69,8 +79,8 @@ showInfoMovies(filmsOrderAsc);
 //Filtrado descendente
 const filterOrderZA = document.querySelector("#input_publication2");
 filterOrderZA.addEventListener("change", () => {
-       const filmsOrderDes = films.sort(function (a, b) {
-        if(filterOrderAZ.value === "Z-A"){
+       const filmsOrderDesc = films.sort(function (a, b) {
+        if(filterOrderZA.value === "Z-A"){
         if (a.title < b.title) {
             return 1;
         } if (a.title > b.title) {
@@ -80,15 +90,17 @@ filterOrderZA.addEventListener("change", () => {
         return 0;
     })
     //console.log(filmsOrderDes);
-    showInfoMovies(filmsOrderDes);   
+showInfoMovies(filmsOrderDesc);   
 })
 
+
+//declaración de variables para que filtren
 //hacer click a los años de las publicaciones de las peliculas para que aparezcan los titles que se hicieron ese año
 const filterYearPublisher = document.querySelector("#input_publication0");
 filterYearPublisher.addEventListener("change", () => {
     
     const filterMoviexYear = films.filter(function(film){
-        console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
+        //console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
         if (film.release_date === filterYearPublisher.value){
             return true;
         }else{
@@ -114,3 +126,48 @@ filternameProducer.addEventListener("change", () => {
     //console.log(filterMoviexProducer);
     showInfoMovies(filterMoviexProducer);
 });
+
+//hacer filtro del top 10 y top 5
+const filterMoviesTop10 = document.querySelector("#input_publication3");
+filterMoviesTop10.addEventListener("change", () => {
+    
+    const filterMoviexTop10 = films.sort(function(c,d){
+        if (filterMoviesTop10.value === "top10"){
+            if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
+                return 1;
+            } if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
+                return -1;
+            }
+        }
+            return 0;
+        })
+        let top10 = filterMoviexTop10.slice(0,10);
+        console.log(top10);
+        showInfoMovies(top10);
+       /* console.log(filterMoviexTop10.slice(0,10));
+        showInfoMovies(filterMoviexTop10.slice(0,10));   */
+    });
+/////falta que solo se filtre 5
+
+    //hacer filtro del top 10 y top 5
+
+  const filterMoviesTop5 = document.querySelector("#input_publication3");
+
+filterMoviesTop5.addEventListener("change", () => {
+   
+    const filterMoviexTop5 = films.sort(function(e,f){
+        if (filterMoviesTop5.value === "top5"){
+      
+            if (parseInt(e.rt_score) > parseInt(f.rt_score)) {
+                return 1;
+            } if (parseInt(e.rt_score) < parseInt(f.rt_score)) {
+                return -1;
+            }
+        }
+            return 0;
+            
+        })
+        let top5 = filterMoviexTop5.slice(0,5);
+        console.log(top5);
+        showInfoMovies(top5);
+    });
