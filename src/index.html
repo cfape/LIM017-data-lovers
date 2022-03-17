@@ -22,7 +22,7 @@
     <header id="main-header">
         <nav>
             <a href="#" class="link-image">
-            <!--img class="header__image_logo" src="img/logo_dataaa.png" alt="Logo de Data Lovers"></img>--> 
+            <!--img class="header_image_logo" src="img/logo_dataaa.png" alt="Logo de Data Lovers"></img>--> 
             </a>
             <img class="header__image_logo" src="img/logo2.png" alt="Logo de Data Lovers"></img>
             <input type="checkbox" id="check" />
@@ -31,7 +31,7 @@
             </label>
 
             <ul class="nav_menu">
-                <audio controls autoplay loop>
+                <audio id= "audio-Totoro" controls loop >
                     <source src="https://vgmsite.com/soundtracks/my-neighbor-totoro-original-soundtrack/rbvjwamt/19%20-%20tonari%20no%20totoro.mp3" type="audio/mp3">
                 </audio>
                 <li class="list_header"><a href="#" class="nav_ul_list_a">Inicio</a></li>
@@ -156,8 +156,7 @@
 
     <span class="span_search">
     <div id="div_search"><b class="div_title_search">Año de publicación</b></br>
-
-        <select id="input_publication" class="section-input_text">
+        <select id="input_publication0" class="section-input_text">
             <option value="todos" disabled selected>Selecciona</option></select>
         </div>
 
@@ -173,11 +172,15 @@
         <option value="Z-A">Nombre Z-A</option></select>
 
     </div>
-    <div class="div_search"><b class="div_title_search">Búsqueda</b> </br>
-        <input type ="text"placeholder="Escribe lo que quieras buscar" class="section-input_text"></input>
-        <img src="img/search.png" class="div-img-search">
+    <div class="div_search"><b class="div_title_search">Rankin</b> </br>
+        <select id="input_publication3" class="section-input_text">
+        <option value="todos" disabled selected>Selecciona</option>
+        <option value="top5">Top 5</option></select>
+
+        <!--input type ="text"placeholder=" Escribe lo que quieras buscar🔎" class="section-input_text"></!--input-->
+        <!--<img src="img/search.png" class="div-img-search">-->
     </div>
-</span>
+    </span>
 
     <main>
 

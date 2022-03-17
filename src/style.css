@@ -33,12 +33,12 @@ nav {
 	margin-right: 20px;
 }
 
-.list__header {
+.list_header {
 	display: inline-block;
 	line-height: 80px;
 	margin: 0 25px;
 }
-.nav_ul_list__a{
+.nav_ul_list_a{
 font-family: "Alumni Sans", cursiva;
 font-weight: bold;
 color:#fff;
@@ -46,7 +46,7 @@ font-size: 28px;
 width: max-content;/*no corta el contenido que tiene más de 1 palabra*/
 padding: 7px 13px;
 }
-.list__header:hover a {
+.list_header:hover a {
 	color:#000;
 	transition: 0.6s;
 
@@ -157,6 +157,7 @@ li a.hover{
 	width: 23em;
 	height: 15em;
 	padding-left: 80px;
+	margin-top: 5em;
 }
 footer{
     font-family: "Alumni Sans";
@@ -230,7 +231,7 @@ main{
 	padding: 0 100px;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	font-size: 12px;
 }
 
@@ -265,7 +266,7 @@ main{
 /*#contenido-peliculas{
 	display: flex;
 	width: 600px;
-	height: 600px;	
+	height: 600px;
 	max-width: 700px;
 	align-items: center;
 }*/
@@ -287,7 +288,7 @@ main{
 .section-input_text{
 	border-radius: 10em;
 	width: 20em;
-  	height:2em;
+	height:2em;
 	border: 4px #ffa94d outset;
 
 }
@@ -301,16 +302,16 @@ main{
 
 }
 
-.foo-header_logorrss{ 
+.foo-header_logorrss{
 	width: 30px;
-	height:30px;	
+	height:30px;
 	margin-top:15px;
-	margin-left: 20px;	 
+	margin-left: 20px;
 }
 audio{
 	width: 12em;
 	height: 21px;
-	margin-left: -50em;
+	margin-left: -60em;
 	margin-right: 5em;
-	
+
 }
