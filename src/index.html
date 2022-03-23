@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Caompatible" content="ie=edge">-->
     <title>Data Lovers | Studio Ghibli </title>
     <link rel="icon" href="totoro_ico.ico">
@@ -23,8 +23,9 @@
         <nav>
             <a href="#" class="link-image">
             <!--img class="header__image_logo" src="img/logo_dataaa.png" alt="Logo de Data Lovers"></img>--> 
-            </a>      
+  
             <img class="header__image_logo" src="img/logo2.png" alt="Logo de Data Lovers"></img>
+            </a>   
             <input type="checkbox" id="check" />
             <label for="check" class="check_boton">
                 <i class="fa-solid fa-bars"></i>
@@ -43,7 +44,7 @@
         </nav>
     </header>
 
-    <section id="section_welcome">
+    <section id="section_welcome" class="section_welcome">
         <h2 id="text-welcome1">¡Bienvenidos! </h2>
         <h3 id="text-welcome2">Aquí encontrarás toda la información referente a este gran estudio japonés</h3>
         <h3 id="text-welcome3">que tiene grandes y memorables producciones en su haber. </h3></br>
@@ -52,7 +53,7 @@
     <br>
     </br>
 
-    <div id="contenedor-texto"> 
+    <div id="contenedor-texto" class="contenedor-texto"> 
 
         <section id="contenido-studio">
             <aside>
@@ -108,12 +109,12 @@
                 <a href=""><img src="img/castillo_ambu.gif" alt="" class="div_img_moviegif" /></a>      
             </div>
         </section>
-            <br><br><br><br><br><br>
+            <br>
         </aside>
         </section>
         <!--<section class="galery_movies" id="galery_movies"> -->
    
-    <section id="contenido-biography">
+    <section id="contenido-biography" class="contenido-biography">
      
         <br>
         <p id="section-p__biography">
@@ -185,10 +186,12 @@
 
     <main>
         
-       <!-- <div class="contenedor_movies"></div>-->
-       <div id="container_main_descriptionmovie"><br>
+     
+       <div id="count"></div>
+       <div class="cards" id="showAllFilms"></div>
     </main>
-<br></br><br></br><br></br><br></br><br></br><br></br>
+    
+<br>
 
 	<footer id="main-footer">
         <div id="foot_div_img">
@@ -206,5 +209,6 @@
 	</footer> 
    
 <script type="module" src ="main.js"></script>
+
 </body>
 </html>
