@@ -18,6 +18,7 @@ function showInfoMovies(filmsPublished)
   for (let i = 0; i < filmsPublished.length; i++)
   {
     let movieGhibli = `
+    
       <div id="contenido-peliculas" class="contenido-peliculas"><br><br><br><br><br><br><br>
         <div class="contenedor_movies">
          <img src=${filmsPublished[i].poster} alt="" class="div_img_movie"  /></a><br>
@@ -28,34 +29,31 @@ function showInfoMovies(filmsPublished)
           <b>Puntuación: </b>${filmsPublished[i].rt_score}</br>
         </div>
       </div>
-      </section> 
+     
       `;
       mainmovies.innerHTML += movieGhibli;
       let divFilms= document.getElementById("contenido-peliculas");
   divFilms.setAttribute("id", filmsPublished[i].id);
   mainmovies.appendChild(divFilms);
 
-  let identificador = document.getElementById(filmsPublished[i].id)
-  //console.log("38" + identificador.value)
-  identificador.addEventListener("click", newScreen);
-  //console.log("click" + filmsPublished[i].id);
-    // eslint-disable-next-line no-inner-declarations
-    function newScreen() {
-      //deleteNodo(mainmovies);
-      mainmovies.innerHTML = "";
-      //quita y muestra elementos del divFilms
-      document.querySelector(".section_welcome").style.display = "none";
-      document.querySelector(".contenedor-texto").style.display = "none";
-      document.querySelector(".contenido-biography").style.display = "none";
-      document.querySelector(".span_search").style.display = "none";
-      document.querySelector(".header").style.position="absolute";
-
-
+  let identificador = document.getElementById(`${filmsPublished[i].id}`)
+  //console.log("38" + filmsPublished[i].title)
+  identificador.addEventListener("click", () => {
+    console.log("click" + filmsPublished[i].id);
+    //console.log("click" + filmsPublished[i].title);
+    mainmovies.innerHTML = "";
+    //quita y muestra elementos del divFilms
+    document.querySelector(".section_welcome").style.display = "none";
+    document.querySelector(".contenedor-texto").style.display = "none";
+    document.querySelector(".contenido-biography").style.display = "none";
+    document.querySelector(".span_search").style.display = "none";
+    document.querySelector(".header").style.position="absolute";
+  });
 }
 
   }
   
-}
+
 showInfoMovies(films);
 
 
@@ -359,3 +357,21 @@ const showAllFilms = document.getElementById("showAllFilms");
 //     }
 //     )}
 //     showFilmInScreen(films);
+
+//Creamos una función que se encargue de crear la tabla:
+const createTable = (array) => {
+  mainmovies.innerHTML+=`<tr><th>Nombre</th>
+  <th>Género</th><th>Edad</th><th>Color de ojos</th>
+  <th>Color de cabello</th></tr>`;
+   
+  for(let i = 0; i<array.length; i++){
+    mainmovies.innerHTML+=`<tr><td>${array[i].name}</td>
+      <td>${array[i].gender}</td>
+      <td>${array[i].age}</td>
+      <td>${array[i].eye_color}</td>
+      <td>${array[i].hair_color}</td></tr>`;
+  }
+  return array;
+  
+};
+console.log(createTable);

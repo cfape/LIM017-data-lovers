@@ -447,3 +447,11 @@ main .card{
   .p_div_card{
 	  text-align: justify;
   }
+
+  /*gráfico de Estadísticas*/
+  #stadistics_graphic_gener{
+	margin: 100px;
+	width:auto;
+	height:auto;
+	background-color:red;
+  }

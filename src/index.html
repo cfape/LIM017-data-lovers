@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a0b1ac6e13.js" crossorigin="anonymous"></script>
- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
 <!-- Fonts -->
     <!--<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">-->
 </head>
@@ -38,6 +38,7 @@
                 <li class="list__header"><a href="#" class="nav_ul_list__a">Inicio</a></li>
                 <li class="list__header"><a href="#contenido-biography" class="nav_ul_list__a">Historia</a></li>
                 <li class="list__header"><a href="#contenido-peliculas" class="nav_ul_list__a">Filmografía</a></li>
+                <li class="list__header"><a href="#contenido-stadistics" class="nav_ul_list__a">Estadísticas</a></li>
                 <li class="list__header"><a href="https://www.netflix.com/pe/browse/genre/81227213" target="_blank" class="nav_ul_list__a">Netflix</a></li>
                 <li class="list__header"><a href="https://open.spotify.com/playlist/37i9dQZF1DX7GTqMQDhOum?si=4d5b0fe976514d9f" target="_blank" class="nav_ul_list__a">Spotify</a></li>
               </ul>
@@ -184,7 +185,7 @@
     </div>
 </span>
 
-    <main>
+    <main id="main">
         
      
         <section class="containerFilms">
@@ -194,8 +195,12 @@
               <div class="cards" id="showAllFilms"></div> <!-- Show all movies -->
             </section>
           </section>
+
+       
     </main>
-    
+    <section id="contenido-stadistics" class="contenido-stadistics">
+        <canvas id="stadistics_graphic_gener"></canvas>
+    </section>
 <br>
 
 	<footer id="main-footer">
@@ -214,6 +219,6 @@
 	</footer> 
    
 <script type="module" src ="main.js"></script>
-
+<script src="stadistics.js"></script>
 </body>
 </html>
