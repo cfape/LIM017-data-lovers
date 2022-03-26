@@ -1,8 +1,29 @@
-// estas funciones son de ejemplo
+//Función orden ascendente y descendente
+export const sortData = (films,filterData) => {
+  console.log(films);
+    if (filterData === "A-Z") {
+      films.sort((a,b) => {
+        if (a.title > b.title) {
+            return 1;
+        }else if (a.title < b.title) {
+            return -1;
+        }
+        return 0;
+    })
 
-export const ghibliFilms = () => {
+  }
+  else {
+  films.sort((a, b) => {
+    if (a.title > b.title) {
+      return -1;
+    }else if (a.title < b.title) {
+      return 1;
+    }
+    return 0;
+  })
 
-  return 'example';
+}
+return films;
 };
 
 export const anotherExample = () => {

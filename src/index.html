@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Caompatible" content="ie=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--meta http-equiv="X-UA-Caompatible" content="ie=edge">-->
     <title>Data Lovers | Studio Ghibli </title>
     <link rel="icon" href="totoro_ico.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -13,37 +13,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a0b1ac6e13.js" crossorigin="anonymous"></script>
-
-<!-- Fonts -->
-    <!--<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"> </script>
 </head>
+
 <body>
-
     <header id="main-header">
-        <nav>
-            <a href="#" class="link-image">
-            <!--img class="header_image_logo" src="img/logo_dataaa.png" alt="Logo de Data Lovers"></img>--> 
-            </a>
-            <img class="header__image_logo" src="img/logo2.png" alt="Logo de Data Lovers"></img>
-            <input type="checkbox" id="check" />
-            <label for="check" class="check_boton">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-
+    <nav>
+        <a href="#" class="link-image">
+        <!--img class="header__image_logo" src="img/logo_dataaa.png" alt="Logo de Data Lovers"></img>-->
+        <img class="header__image_logo" src="img/logo2.png" alt="Logo de Data Lovers"></img>
+        </a>
+        <input type="checkbox" id="check" />
+        <label for="check" class="check_boton">
+            <i class="fa-solid fa-bars"></i>
+        </label>
             <ul class="nav_menu">
-                <audio id= "audio-Totoro" controls loop >
-                    <source src="https://vgmsite.com/soundtracks/my-neighbor-totoro-original-soundtrack/rbvjwamt/19%20-%20tonari%20no%20totoro.mp3" type="audio/mp3">
-                </audio>
-                <li class="list_header"><a href="#" class="nav_ul_list_a">Inicio</a></li>
-                <li class="list_header"><a href="#contenido-biography" class="nav_ul_list_a">Historia</a></li>
-                <li class="list_header"><a href="#contenido-peliculas" class="nav_ul_list_a">Filmografía</a></li>
-                <li class="list_header"><a href="https://www.netflix.com/pe/browse/genre/81227213" target="_blank" class="nav_ul_list_a">Netflix</a></li>
-                <li class="list_header"><a href="https://open.spotify.com/playlist/37i9dQZF1DX7GTqMQDhOum?si=4d5b0fe976514d9f" target="_blank" class="nav_ul_list_a">Spotify</a></li>
-            </ul>
-        </nav>
+            <audio id= "audio-Totoro" controls loop >
+            <source src="https://vgmsite.com/soundtracks/my-neighbor-totoro-original-soundtrack/rbvjwamt/19%20-%20tonari%20no%20totoro.mp3" type="audio/mp3">
+            </audio>
+            <li class="list_header"><a href="#" class="nav_ul_list_a">Inicio</a></li>
+            <li class="list_header"><a href="#contenido-biography" class="nav_ul_list_a">Historia</a></li>
+            <li class="list_header"><a href="#contenido-peliculas" class="nav_ul_list_a">Filmografía</a></li>
+            <li class="list_header"><a href="https://www.netflix.com/pe/browse/genre/81227213" target="_blank" class="nav_ul_list_a">Netflix</a></li>
+            <li class="list_header"><a href="https://open.spotify.com/playlist/37i9dQZF1DX7GTqMQDhOum?si=4d5b0fe976514d9f" target="_blank" class="nav_ul_list_a">Spotify</a></li>
+        </ul>
+    </nav>
     </header>
 
-    <section id="section_welcome">
+    <section id="section_welcome" class="section_welcome">
         <h2 id="text-welcome1">¡Bienvenidos! </h2>
         <h3 id="text-welcome2">Aquí encontrarás toda la información referente a este gran estudio japonés</h3>
         <h3 id="text-welcome3">que tiene grandes y memorables producciones en su haber. </h3></br>
@@ -51,81 +48,79 @@
     </section>
     <br>
     </br>
-
-    <div id="contenedor-texto">
-
+    <div id="contenedor-texto" class="contenedor-texto">
         <section id="contenido-studio">
             <aside>
                 <br><img id="logo" src="img/logo1.png"/></br></br>
-                <table id= "table-info">
-                <tr>
-                    <th colspan="2">Studio Ghibli, Inc.</th></tr>
-                    <td><b>Industria</b></td>
-                    <td>Películas de animación
-                        Videojuegos
-                        Anuncios de televisión</p>
-                </td>
-                </tr>
-                    <td><b>Fundación</b></td>
-                    <td>15 de junio de 1985</td>
-                <tr>
-                <td><b>Fundador</b></td>
-                <td><p>Hayao Miyazaki</p>
-                <p>Isao Takahata</p>
-                <p>Toshio Suzuki</p>
-                <p>Yasuyoshi Tokuma</p></td>
-            </tr>
-            <tr>
-                <td><b>Sede</b></td>
-                <td>Koganei, Tokio, Japón</td>
-            </tr>
-            <tr>
-                <td><b>Presidente</b></td>
-                <td>Toshio Suzuki</td>
-            </tr>
-            <tr>
-                <td><b>Personas clave</b></td>
-                <td>Koji Hoshino
-                <p>Kiyofumi Nakajima</p>
-                <p>Hayao Miyazaki</p>
-                <p>Toshio Suzuki</p></td>
-            </tr>
-            <tr>
-                <td><b>Productos</b></td>
-                <td>Películas de animación (anime),
-                    películas para televisión, anuncios,
-                    películas de imagen real</p></td>
-            </tr>
-            <tr>
-                <td><b>Beneficio neto</b></td>
-                <td>1426 millones ¥ (2011)</td>
-            </tr>
-        </table>
-        <br><br><br><br><br><br>
+    <table id= "table-info">
+    <tr>
+        <th colspan="2">Studio Ghibli, Inc.</th></tr>
+    <td><b>Industria</b></td>
+    <td>Películas de animación
+        Videojuegos
+        Anuncios de televisión</p>
+    </td>
+    </tr>
+    <td><b>Fundación</b></td>
+    <td>15 de junio de 1985</td>
+    <tr>
+    <td><b>Fundador</b></td>
+    <td><p>Hayao Miyazaki</p>
+    <p>Isao Takahata</p>
+    <p>Toshio Suzuki</p>
+    <p>Yasuyoshi Tokuma</p></td>
+    </tr>
+    <tr>
+    <td><b>Sede</b></td>
+    <td>Koganei, Tokio, Japón</td>
+        </tr>
+        <tr>
+        <td><b>Presidente</b></td>
+    <td>Toshio Suzuki</td>
+    </tr>
+        <tr>
+        <td><b>Personas clave</b></td>
+        <td>Koji Hoshino
+        <p>Kiyofumi Nakajima</p>
+        <p>Hayao Miyazaki</p>
+        <p>Toshio Suzuki</p></td>
+    </tr>
+    <tr>
+    <td><b>Productos</b></td>
+    <td>Películas de animación (anime),
+        películas para televisión, anuncios,
+        películas de imagen real</p></td>
+    </tr>
+    <tr>
+        <td><b>Beneficio neto</b></td>
+        <td>1426 millones ¥ (2011)</td>
+    </tr>
+    </table>
+    <br><br><br><br><br><br>
 
-        <section class="img_gif_castle">
-            <div class="img_gif_castle">
-                <a href=""><img src="img/castillo_ambu.gif" alt="" class="div_img_moviegif" /></a>
-            </div>
-        </section>
-            <br><br><br><br><br><br>
-        </aside>
-        </section>
-        <!--<section class="galery_movies" id="galery_movies"> -->
+    <section class="img_gif_castle">
+    <div class="img_gif_castle">
+    <a href=""><img src="img/castillo_ambu.gif" alt="" class="div_img_moviegif" /></a>
+    </div>
+    </section>
+    <br>
+    </aside>
+    </section>
+    <!--<section class="galery_movies" id="galery_movies"> -->
 
-    <section id="contenido-biography">
+    <section id="contenido-biography" class="contenido-biography">
 
-        <br>
-        <p id="section-p__biography">
+    <br>
+    <p id="section-p__biography">
             <h2>Historia</h2></br>Studio Ghibli (スタジオジブリ Sutajio Jiburi?) es un estudio japonés de animación, considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad.1​
             El estudio es mejor conocido por sus largometrajes animados y también ha producido varios cortometrajes, comerciales de televisión y una película para televisión. Fue fundado el 15 de junio de 1985 por los directores Hayao Miyazaki e Isao Takahata y el productor Toshio Suzuki , después del éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984). Studio Ghibli también ha colaborado con estudios de videojuegos en el desarrollo visual de varios videojuegos.
             Seis de las películas de Studio Ghibli se encuentran entre las 10 películas de anime más taquilleras realizadas en Japón, siendo El Viaje de Chihiro (2001) la segunda más alta, recaudando más de 360 millones de dólares en todo el mundo. Muchos de sus trabajos han ganado el premio Animage Anime Grand Prix, y cuatro han ganado el Premio de la Academia Japonesa de Animación del Año. Cinco de las películas de Studio Ghibli han recibido nominaciones al Óscar. El Viaje de Chihiro ganó el Oso de Oro en 2002 y el Premio de la Academia a la Mejor Película de Animación en 2003. Totoro, un personaje de Mi vecino Totoro, es la mascota del estudio.
             El 3 de agosto de 2014, Studio Ghibli detuvo temporalmente la producción tras el retiro de Miyazaki. En febrero de 2017, Toshio Suzuki anunció que Miyazaki había vuelto a salir de su retiro para dirigir un nuevo largometraje con Studio Ghibli.</p>
-        </p></br>
-        <h2>Películas</h2></br>A continuación te compartimos una lista de las películas realizadas por dicho estudio en su larga trayectoria.
+    </p></br>
+    <h2>Películas</h2></br>A continuación te compartimos una lista de las películas realizadas por dicho estudio en su larga trayectoria.
 
-        <br> </br>
-        <ul>
+    <br> </br>
+    <ul>
     <li class="list__movies"><b>1.</b> Nausicaä del Valle del Viento (1984)</li></br>
     <li class="list__movies"><b>2.</b> El castillo en el cielo (1986)</li></br>
     <li class="list__movies"><b>3.</b> La tumba de las luciérnagas (1988)</li></br>
@@ -163,43 +158,51 @@
     <div class="div_search"><b class="div_title_search">Productor</b></br>
         <select id="input_publication1" class="section-input_text">
         <option value="todos" disabled selected>Selecciona</option></select>
-
     </div>
+
     <div class="div_search"><b class="div_title_search">Ordenar</b></br>
         <select id="input_publication2" class="section-input_text">
         <option value="todos" disabled selected>Selecciona</option>
-        <option value="A-Z">Nombre A-Z</option>
+        <option value="A-Z" >Nombre A-Z</option>
         <option value="Z-A">Nombre Z-A</option></select>
 
     </div>
-    <div class="div_search"><b class="div_title_search">Rankin</b> </br>
+    <div class="div_search"><b class="div_title_search">Ranking Top</b> </br>
         <select id="input_publication3" class="section-input_text">
-        <option value="todos" disabled selected>Selecciona</option>
-        <option value="top5">Top 5</option></select>
+            <option value="todos" disabled selected>Selecciona</option>
+            <option id= "top10" value="Mejores rankeadas">Mejores rankeadas</option>
+            <option id ="top-10" value="Menos rankeadas">Menos rankeadas</option>
+        </select>
+        <!--<img src="img/search.png" class="div-img-search"><input type ="text"placeholder=" 🔎 Escribe lo que quieras buscar" class="section-input_text"></input>-->
 
-        <!--input type ="text"placeholder=" Escribe lo que quieras buscar🔎" class="section-input_text"></!--input-->
-        <!--<img src="img/search.png" class="div-img-search">-->
     </div>
-    </span>
+</span>
 
     <main>
 
-    <!-- <div class="contenedor_movies"></div>-->
+
+        <section class="containerFilms">
+            <!-- all films -->
+            <section class="section-films">
+            <div id="count"></div>
+            <div class="cards" id="showAllFilms"></div> <!-- Show all movies -->
+            </section>
+        </section>
     </main>
-<br></br><br></br><br></br><br></br><br></br><br></br>
+
+<br>
 
 	<footer id="main-footer">
         <div id="foot_div_img">
-            <a href="section_welcome"><img src="img/up.png" alt="Facebook" class="foo-header_logorrss"></img>
-            </a>
+            <a href="section_welcome"><img src="img/up.png" alt="Facebook" class="foo-header_logorrss"></img></a>
 		<li><a href="https://www.facebook.com/GhibliStudios/" target="_blank">
             <img src="img/fb.png" alt="Facebook" class="foo-header_logorrss"></img></a>
                 <a href="https://www.instagram.com/ghibliusa/?hl=es" target="_blank">
                     <img src="img/ig.png" alt="Instagram" class="foo-header_logorrss"></img></a>
                     <a href="https://twitter.com/GhibliUSA" target="_blank">
                         <img src="img/tw.png" alt="Twitter" class="foo-header_logorrss"></img></a></li>
-                © 2022 Creado por Cynthia Farfán & Juana Llanje para Laboratoria LIM017
-            </div>
+                © 2022 Creado por Cynthia Farfán & Juana Llanje para Laboratoria LIM017<br>
+        </div>
 	</footer>
 
 <script type="module" src ="main.js"></script>
