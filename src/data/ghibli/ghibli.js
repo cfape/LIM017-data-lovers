@@ -3,8 +3,9 @@ export default {
   "films": [
     {
       "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+      "cover": "https://i.ibb.co/Ms6BGk2/wallpaper-Castillo-en-el-cielo.jpg",
       "title": "El castillo en el cielo",
-      "description": "Dirigida por Hayao Miyazaki, es la primera película oficial realizada y producida por Studio Ghibli, si no tenemos en cuenta a la anterior. En esta película los protagonistas son Sheeta y Pazu, dos niños que intentan proteger una piedra mágica de un grupo de militares, que quieren conseguirla para llegar a una isla, 'Laputa', que, según cuentan las leyendas, flota en el cielo.",
+      "description": "Es la primera película oficial realizada y producida por Studio Ghibli, si no tenemos en cuenta a la anterior. En esta película los protagonistas son Sheeta y Pazu, dos niños que intentan proteger una piedra mágica de un grupo de militares, que quieren conseguirla para llegar a una isla, 'Laputa', que, según cuentan las leyendas, flota en el cielo.",
       "director": "Hayao Miyazaki",
       "producer": "Isao Takahata",
       "poster": "https://i.ibb.co/s3mtq76/1986-castillo-cartel.jpg",
@@ -205,6 +206,7 @@ export default {
     },
     {
       "id": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
+      "cover": "https://i.ibb.co/8b1fVtc/wallpaper-Totoro.jpg",
       "title": "Mi vecino Totoro",
       "description": "Escrita y dirigida por Hayao Miyazaki, en este caso se muestra la historia de una familia con el espíritu Totoro, que se encuentra en el bosque en el Japón de la posguerra. Totoro es el logotipo de Studio Ghibli. ❤️",
       "director": "Hayao Miyazaki",
@@ -353,8 +355,9 @@ export default {
     },
     {
       "id": "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
-      "title": "Nicky, la aprendiz de bruja",
-      "description": "En Latinoamérica es conocida como Kiki: Entregas a domicilio; menos en Argentina, donde se llama El delivery de Kiki. En España se le conoce como el nombre del título, Nicky, la aprendiz de bruja. También escrita y dirigida por Hayao Miyazaki, inspirado en la novela de Eiko Kadono. En la quinta película de Studio Ghibli se trata la transición de Kiki, una niña, desde su infancia a la vida adulta.",
+      "cover": "https://i.ibb.co/y45kHJV/wallpaper-Nicky-aprendiz-de-bruja.jpg",
+      "title": "Kiki: Entregas a domicilio",     
+      "description": "También escrita y dirigida por Hayao Miyazaki, inspirado en la novela de Eiko Kadono. En la quinta película de Studio Ghibli se trata la transición de Kiki, una niña, desde su infancia a la vida adulta.",
       "director": "Hayao Miyazaki",
       "producer": "Hayao Miyazaki",
       "poster": "https://i.ibb.co/7g5m9d5/1989-kiki-cartel.jpg",
@@ -479,8 +482,9 @@ export default {
     },
     {
       "id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
-      "title": "La tumba de las luciérnagas",
-      "description": "Está dirigida por Isao Takahata, su primera película dirigida con Studio Ghibli. La historia se inspira en un relato del autor Akiyuki Nosaka de 1967, en la que cuenta experiencias propias vividas durante la Segunda Guerra Mundial. Se desarrolla en Kōbe, ciudad de Japón, en la que los hermanos Seita y Setsuko luchan desesperadamente por sobrevivir en los últimos meses de la guerra.",
+      "cover": "https://i.ibb.co/0VKGWpJ/wallpaper-Tumba-de-las-luci-rnagas.jpg",
+      "title": "La tumba de las luciérnagas",  
+      "description": "La historia se inspira en un relato del autor Akiyuki Nosaka de 1967, en la que cuenta experiencias propias vividas durante la Segunda Guerra Mundial. Se desarrolla en Kōbe, ciudad de Japón, en la que los hermanos Seita y Setsuko luchan desesperadamente por sobrevivir en los últimos meses de la guerra.",
       "director": "Isao Takahata",
       "producer": "Toru Hara",
       "poster": "https://i.ibb.co/3N4NH3Z/1988-tumba-cartel.jpg",
@@ -543,8 +547,9 @@ export default {
     },
     {
       "id": "4e236f34-b981-41c3-8c65-f8c9000b94e7",
+      "cover": "https://i.ibb.co/YBySxLh/wallpaper-Recuerdos-del-ayer.jpg",
       "title": "Recuerdos del ayer",
-      "description": "It’s 1982, and Taeko is 27 years old, unmarried, and has lived her whole life in Tokyo. She decides to visit her family in the countryside, and as the train travels through the night, memories flood back of her younger years: the first immature stirrings of romance, the onset of puberty, and the frustrations of math and boys. At the station she is met by young farmer Toshio, and the encounters with him begin to reconnect her to forgotten longings. In lyrical switches between the present and the past, Taeko contemplates the arc of her life, and wonders if she has been true to the dreams of her childhood self.",
+      "description": "Taeko Okajima es una joven asalariada de veintisiete años que pide permiso de vacaciones para poder regresar a su casa de Yamagata, el pueblo rural de su cuñada, y donde guarda tiernos momentos. En el transcurso de su viaje a la granja de sus familiares y a su posterior estancia, Taeko irá recordando su infancia, sus días en la escuela y otras vivencias peculiares, mientras vive intensamente su presente.",
       "director": "Isao Takahata",
       "producer": "Toshio Suzuki",
       "poster": "https://i.ibb.co/J52SYwp/1991-recuerdos-cartel.jpg",
@@ -679,6 +684,7 @@ export default {
     },
     {
       "id": "ebbb6b7c-945c-41ee-a792-de0e43191bd8",
+      "cover": "https://i.ibb.co/99D445h/wallpaper-Porco-Rosso-1.jpg",
       "title": "Porco Rosso",
       "description": "Quinta película de Hayao Miyazaki en Studio Ghibli. La historia se sitúa en Italia en período de entreguerras, en plena dictadura de Benito Mussolini. Un piloto militar, Marco Pagot, adopta la apariencia de un cerdo tras una especie de hechizo. A partir de entonces se convertirá en “Porco Rosso”, un cazarrecompensas que tratará de evitar los saqueos de piratas en el mar Adriático. De esta película surgió un manga escrito por Miyazaki de un total de 6 volúmenes.",
       "director": "Hayao Miyazaki",
@@ -800,6 +806,7 @@ export default {
     },
     {
       "id": "1b67aa9a-2e4a-45af-ac98-64d6ad15b16c",
+      "cover": "https://i.ibb.co/BgcTRP3/wallpaper-Pompoko-1.jpg",
       "title": "Pompoko",
       "description": "Creada por Isao Takahata, en esta película se acude bastante al entorno y folclore de Japón, lo que dificultó su doblaje al inglés por los localismos y jergas japonesas. Los personajes que utiliza aquí Studio Ghibli son tanuki, un mapache japonés, que en la película pueden transformarse en humanos o las criaturas que quieran. Así, al ver que el humano está destrozando el bosque en el que habitan, una familia de tanuki planean derrotarlos con la ayuda de sus poderes.",
       "director": "Isao Takahata",
@@ -874,6 +881,7 @@ export default {
     },
     {
       "id": "ff24da26-a969-4f0e-ba1e-a122ead6c6e3",
+      "cover": "https://i.ibb.co/fxCkmgd/wallpaper-Susurros.jpg",
       "title": "Susurros del corazón",
       "description": "En esta película el director es Yoshifumi Kondō, con el guion de Hayao Miyazaki, convirtiéndose en la primera película japonesa en utilizar Dolby Digital como formato de sonido. En esta historia de drama y romance, la estudiante Shizuku Tsukishima se da cuenta de que los libros que adquiere en la biblioteca los ha escogido otra persona antes. Al descubrir quién da con Seiji, otro joven que está aprendiendo a fabricar violines.",
       "director": "Yoshifumi Kondō",
@@ -990,6 +998,7 @@ export default {
     },
     {
       "id": "0440483e-ca0e-4120-8c50-4c8cd9b965d6",
+      "cover": "https://i.ibb.co/vdwZ0nP/wallpaper-Mononoke-1.jpg",
       "title": "La princesa Mononoke",
       "description": "Película de Hayao Miyazaki centrada en el enfrentamiento entre los humanos que explotan recursos de un bosque y los guardianes sobrenaturales que habitan en él. En esta película fantástica Ashitaka busca al dios Ciervo para que le cure la herida de un jabalí.",
       "director": "Hayao Miyazaki",
@@ -1134,6 +1143,7 @@ export default {
     },
     {
       "id": "45204234-adfd-45cb-a505-a8e7a676b114",
+      "cover": "https://i.ibb.co/qppS3Ts/wallpaper-Yamada-1.jpg",
       "title": "Mis vecinos los Yamada",
       "description": "Está inspirada en un manga homónimo, con la dirección de Isao Takahata, siendo la primera película del estudio que se realizó a ordenador en su totalidad. El largometraje presenta con un formato de tiras cómicas la rutina y la vida de una familia de clase media japonesa. Una película innovadora en el mundo del anime.",
       "director": "Isao Takahata",
@@ -1198,6 +1208,7 @@ export default {
     },
     {
       "id": "dc2e6bd1-8156-4886-adff-b39e6043af0c",
+      "cover": "https://i.ibb.co/dg7Y9P7/wallpaper-Chihiro-1.jpg",
       "title": "El viaje de Chihiro",
       "description": "Está considerada como una de las mejores películas de animación de todos los tiempos, así como de las mejores películas de los 2000, y la única obra de anime que cuenta con un Óscar a la mejor película de animación. 👌 Chihiro es una niña de 12 años que durante un viaje por una mudanza acaba en un mundo mágico, en el que luchará por salvar a sus padres y regresar a su mundo natural. Miyazaki se inspiró en la hija de 10 años de un amigo suyo para realizarla.",
       "director": "Hayao Miyazaki",
@@ -1335,6 +1346,7 @@ export default {
     },
     {
       "id": "90b72513-afd4-4570-84de-a56c312fdf81",
+      "cover": "https://i.ibb.co/drrgdQW/wallpaper-Haru-en-el-reino-de-los-gatos.jpg",
       "title": "Haru en el reino de los gatos",
       "description": "La vida de la joven Haru cambiará al salvar a un gato de ser atropellado al volver del instituto. No es cualquier gato, sino Lune, el Príncipe del Reino de los Gatos, que la invitará a su reino. También conocida en Latinoamérica como El regreso del gato. Está dirigida por Hiroyuki Morita.",
       "director": "Hiroyuki Morita",
@@ -1466,6 +1478,7 @@ export default {
     },
     {
       "id": "cd3d059c-09f4-4ff3-8d63-bc765a5184fa",
+      "cover": "https://i.ibb.co/nMcsfQw/wallpaper-El-castillo-ambulante-1.jpg",
       "title": "El castillo ambulante",
       "description": "En Hispanoamérica también conocida como El increíble castillo vagabundo, dirigida por Hayao Miyazaki. En un mundo tecnológico y mágico, la joven Sophie tiene aspecto de anciana debido a una maldición, por lo que decide acudir al mago Howl, que habita en un castillo ambulante, y que también necesita la ayuda de Sophie.",
       "director": "Hayao Miyazaki",
@@ -1605,6 +1618,7 @@ export default {
     },
     {
       "id": "112c1e67-726f-40b1-ac17-6974127bb9b9",
+      "cover": "https://i.ibb.co/hYYKCLw/wallpaper-Cuentos-de-Terramar-1.jpg",
       "title": "Cuentos de Terramar",
       "description": "Elaborada por Gorō Miyazaki, hijo de Hayao Mizayaki, está basada en la novela “Terramar: La costa más lejana”, de la autora Ursula K. Le Guin. En este largometraje vemos a Arren, un príncipe joven angustiado por su pasado y que mirará hacia el futuro gracias al mago Gavilán, en un mundo lleno de poderes, talismanes y dragones del archipiélago de Terramar.",
       "director": "Gorō Miyazaki",
@@ -1711,6 +1725,7 @@ export default {
     },
     {
       "id": "758bf02e-3122-46e0-884e-67cf83df1786",
+      "cover": "https://i.ibb.co/vmCy73r/wallpaper-Ponyo-en-el-acantilado-1.jpg",
       "title": "Ponyo en el acantilado",
       "description": "También llamada Ponyo y el secreto de la sirenita en Hispanoamérica o simplemente Ponyo, Miyazaki nos adentra en una adaptación libre de La sirenita; donde Sosuke, un niño de 5 años es amigo de una princesa pez que quiere transformarse en una persona.",
       "director": "Hayao Miyazaki",
@@ -1861,8 +1876,9 @@ export default {
     },
     {
       "id": "2de9426b-914a-4a06-a3a0-5e6d9d3886f6",
-      "title": "Arrietty y el mundo diminuto",
-      "description": "Es la primera película de Hiromasa Yonebayashi, inspirada en la novela Los incursores, de la escritora Mary Norton. También denominada El mundo secreto de Arriety. Seres diminutos de unos 10 centímetros nos ocupan en esta película situada al oeste de Tokio, en Koganei, donde esta familia tiene como norma no ser vistos por las personas. No obstante, un niño ve a Arrietty, con la que formará una gran amistad que amenazará también a estos seres diminutos.",
+      "cover": "https://i.ibb.co/Jt2cFhg/wallpaper-Arrietty-y-el-mundo-diminuto-1.jpg",
+      "title": "Arrietty y el mundo secreto",
+      "description": "Seres diminutos de unos 10 centímetros nos ocupan en esta película situada al oeste de Tokio, en Koganei, donde esta familia tiene como norma no ser vistos por las personas. No obstante, un niño ve a Arrietty, con la que formará una gran amistad que amenazará también a estos seres diminutos.",
       "director": "Hiromasa Yonebayashi",
       "producer": "Toshio Suzuki",
       "poster": "https://i.ibb.co/pXPVmmR/2010-arrietty-cartel.jpg",
@@ -1978,8 +1994,9 @@ export default {
     },
     {
       "id": "45db04e4-304a-4933-9823-33f389e8d74d",
+      "cover": "https://i.ibb.co/bdLJrD6/wallpaper-La-colina-de-las-amapolas-1.jpg",
       "title": "La colina de las amapolas",
-      "description": "The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea. The flag means “I pray for safe voyages”. A 17 year-old boy, Shun, always sees this flag from the sea as he rides a tugboat to school. Gradually the pair are drawn to each other but they are faced with a sudden trial. Even so, they keep going without running from facing the hardships of reality.",
+      "description": "Segunda película del hijo de Miyazaki, Goro, ambientada en el Japón del 1963, cuando Umi Matsuzaki, estudiante de instituto, cuida a sus dos hermanos y a su abuela por la ausencia de su madre. También se hace cargo del hostal Coquelicot Manor. Un día conocerá a Shun, miembro de un club de periodismo, con quien entablará una gran amistad, en peligro por la posibilidad de descubrir un secreto del pasado.",
       "director": "Gorō Miyazaki",
       "producer": "Toshio Suzuki",
       "poster": "https://i.ibb.co/bKqk5Cf/2011-colina-cartel.jpg",
@@ -2084,6 +2101,7 @@ export default {
     },
     {
       "id": "67405111-37a5-438f-81cc-4666af60c800",
+      "cover": "https://i.ibb.co/w68vLy4/wallpaper-El-viento-se-levanta-1.jpg",
       "title": "El viento se levanta",
       "description": "O, cambiando el orden de las palabras en Hispanoamérica, Se levanta el viento, con el director Hayao Miyazaki. Jiro Horikoshi tiene el sueño de diseñar aviones y volar, pero sus problemas de vista lo impedían volar. Consigue unirse a una compañía de ingeniería y pronto se le reconoce como un gran diseñador aeronáutico. Es una película biográfica del piloto que diseñó Zero, avión que se utilizó en el ataque a Pearl Harbor en la II Guerra Mundial.",
       "director": "Hayao Miyazaki",
@@ -2203,6 +2221,7 @@ export default {
     },
     {
       "id": "578ae244-7750-4d9f-867b-f3cd3d6fecf4",
+      "cover": "https://i.ibb.co/8YRJm9Q/wallpaper-El-cuento-de-la-princesa-Kaguya-1.jpg",
       "title": "El cuento de la princesa Kaguya",
       "description": "Isao Takahata se inspira en un cuento popular japonés, “El cortador de bambú”. Dos ancianos campesinos ven a una diminuta niña en una planta de bambú, y la adoptan como si de su hija se tratase.",
       "director": "Isao Takahata",
@@ -2309,6 +2328,7 @@ export default {
     },
     {
       "id": "5fdfb320-2a02-49a7-94ff-5ca418cae602",
+      "cover": "https://i.ibb.co/CtCJd8s/wallpaper-Marnie1-1.png",
       "title": "El recuerdo de Marnie ",
       "description": "Anna vive con sus padres de adopción y siempre está sola, ya que no tiene amigos. Un día conocerá a Marnie, que será su mejor amiga, pero más adelante Anna descubrirá que Marnie no era lo que creía… Película de Hiromasa Yonebayashi.",
       "director": "Hiromasa Yonebayashi",
