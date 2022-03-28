@@ -1,22 +1,63 @@
-// estas funciones son de ejemplo
+//  import films from './main.js';
 
-/*export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};*/
-
-export const porcentGender=(data,total) =>{
-  
-  //Generamos un objeto para conocer la cantidad de mujeres y varones
-  let array =[{gender:'Femenino', valor:0},{gender:'Masculino', valor:0}];
-  for(let element of data){
-      (element.gender === 'F' || element.gender ==='🙋🏻‍♀️')? array[0].valor += 1: array[1].valor += 1;
+/*objeto ordena ascendente y descendente*/
+export const sortData = (data,sortOrder) => {
+  //console.log(data);
+    if (sortOrder === "A-Z") {
+      data.sort((a,b) => {
+        if (a.title > b.title) {
+            return 1;
+        }else if (a.title < b.title) {
+            return -1;
+        }
+        return 0;
+    })
   }
-  //Convertimos los valores obtenidos de mujeres y varones en porcentaje:
-  array[0].valor=Math.round((array[0].valor/total)*100);
-  array[1].valor=Math.round((array[1].valor/total)*100);
-  return array;
+  else {
+  data.sort((a, b) => {
+    if (a.title > b.title) {
+      return -1;
+    }else if (a.title < b.title) {
+      return 1;
+    }
+    return 0;
+  })
 }
+return data;
+};
+/*objeto ordena mejores y menos rankeadas*/
+export const sortMovieRanking =(data, sortOrder) => {
+        if (sortOrder === "Menos rankeadas") {
+          data.sort((c,d) => { 
+            if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
+                return 1;
+            } else if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
+                return -1;
+            }
+            return 0;
+        })
+    }
+else {
+  data.sort((c,d)=>{
+    if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
+        return -1;
+    } if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
+        return 1;
+    }
+    return 0;
+})
+}
+return data;
+}
+
+///Función Año de Publicación
+export const filterYearPublisher = (films ,release_date) => {
+  //console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
+  const filterMovie = films.filter ((film) => {
+  if (release_date === film.release_date) {
+    return true;
+  } else {
+      return false;
+  }});
+  return filterMovie;
+};

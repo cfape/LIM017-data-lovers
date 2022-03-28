@@ -1,6 +1,6 @@
-// //import films from './main.js';
+// import films from './main.js';
 // import{porcentGender} from './data.js';
-// //export const films = mainmovies ;
+// export const films = mainmovies ;
 
 
 // let arrayForGender= [];
@@ -43,19 +43,28 @@
 // )
 //import "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js";
 
+// import data from './data/ghibli/ghibli.js';
+// const datas = data.films;
 
-const stadisticsGraphicGener = document.querySelector("#stadistics_graphic_gener").getContext("2d");
-const chart = new Chart(stadisticsGraphicGener,{
-    type:"bar",
-    data:{
-        labels: ["Female", "Male"], //cabecera
-        datasets:[
-        {   
-            label: "Estadísticas de género en las películas", //titulo
-            backgroundColor: "rgba(255,255,255)",
-            borderColor: "rgb(255,255,0)",
-            data:[100,58] //cantidad del peliculas
-        }
-    ]
-}
-})
+// function totalPeoplexGener(stdscore){
+//     const {rt_score, title} = datas; //solicitamos la info de la data
+// const chart = new Chart(stdscore, {
+//     type:"bar",
+//     data:{
+//         labels: datas.title.map(item => item.title), //cabecera
+//         datasets:[
+//         {   
+//             label: "Puntuación", //titulo
+//             backgroundColor: "#4DF4FF",
+//             borderColor: "#ff5Ab0",
+//             data: parseInt(rt_score).map(item => item.rt_score), //cantidad del peliculas
+//         }
+//     ]
+// }
+// })
+// }
+// function renderCharts(){
+// const stadisticsGraphicGener = document.querySelector("#stadistics_graphic_gener").getContext("2d");
+// totalPeoplexGener(stadisticsGraphicGener);
+// }
+// renderCharts()

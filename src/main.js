@@ -1,4 +1,5 @@
-import data from './data/ghibli/ghibli.js';
+import data from './data/ghibli/ghibli.js'; //importando data de ghibli.js
+import { sortData, sortMovieRanking } from './data.js'; //importando objeto "sortDataMovies" de data.js
 const films = data.films;
 const mainmovies = document.querySelector("main");
 //const count = document.querySelector(".count");
@@ -11,367 +12,213 @@ audioMusicTotoro.addEventListener("click", () => {
 });
 
 
-/*funciones para mostrar contenido de películas */
-function showInfoMovies(filmsPublished)
-{
-  mainmovies.innerHTML = "";
-  for (let i = 0; i < filmsPublished.length; i++)
-  {
-    let movieGhibli = `
-    
-      <div id="contenido-peliculas" class="contenido-peliculas"><br><br><br><br><br><br><br>
-        <div class="contenedor_movies">
-         <img src=${filmsPublished[i].poster} alt="" class="div_img_movie"  /></a><br>
-          <b><h3 class="contenedor_section_h3__movti"> ${filmsPublished[i].title}</h3></b> </br>
-          <div class="div_contenido_movies"><b>Fecha de publicación: </b>${filmsPublished[i].release_date} </br>
-          <b>Director: </b>${filmsPublished[i].director} </br>
-          <b>Productor: </b>${filmsPublished[i].producer} </br>
-          <b>Puntuación: </b>${filmsPublished[i].rt_score}</br>
-        </div>
-      </div>
-     
-      `;
-      mainmovies.innerHTML += movieGhibli;
-      let divFilms= document.getElementById("contenido-peliculas");
-  divFilms.setAttribute("id", filmsPublished[i].id);
-  mainmovies.appendChild(divFilms);
+// function showInfoMovies(filmsPublished){
+//   mainmovies.innerHTML = "";
+//   for (let i = 0; i < filmsPublished.length; i++){
+//     let movieGhibli = `    
+//       <div id="contenido-peliculas" class="contenido-peliculas"><br><br><br><br><br><br><br>
+//         <div class="contenedor_movies">
+//          <img src=${filmsPublished[i].poster} alt="" class="div_img_movie"  /></a><br>
+//           <b><h3 class="contenedor_section_h3__movti"> ${filmsPublished[i].title}</h3></b> </br>
+//           <div class="div_contenido_movies"><b>Fecha de publicación: </b>${filmsPublished[i].release_date} </br>
+//           <b>Director: </b>${filmsPublished[i].director} </br>
+//           <b>Productor: </b>${filmsPublished[i].producer} </br>
+//           <b>Puntuación: </b>${filmsPublished[i].rt_score}</br>
+//         </div>
+//       </div>
+//       `;
+//       mainmovies.innerHTML += movieGhibli;
 
-  let identificador = document.getElementById(`${filmsPublished[i].id}`)
-  //console.log("38" + filmsPublished[i].title)
-  identificador.addEventListener("click", () => {
-    console.log("click" + filmsPublished[i].id);
-    //console.log("click" + filmsPublished[i].title);
+/*función que muestra carteles de películas */
+const showInfoMovies = (arrayData) =>{
     mainmovies.innerHTML = "";
-    //quita y muestra elementos del divFilms
-    document.querySelector(".section_welcome").style.display = "none";
-    document.querySelector(".contenedor-texto").style.display = "none";
-    document.querySelector(".contenido-biography").style.display = "none";
-    document.querySelector(".span_search").style.display = "none";
-    document.querySelector(".header").style.position="absolute";
-  });
-}
+    arrayData.forEach((filmsPublished) => {  
+        const divFilm = document.createElement("div"); //div para cada tarjeta
+        divFilm.classList.add("div_content_movies");
+         divFilm.innerHTML=`<img src="${filmsPublished.poster}" class="div_img_movie" /><br>
+         <b><h3 class="contenedor_section_h3__movti"><p class="films-titles">${filmsPublished.title}</h3></b></br>
+         <span class="span_info_Card"><b>Año publicación: </b>${filmsPublished.release_date}</span></br>
+         <span class="span_info_Card"><b>Director: </b>${filmsPublished.director}</span></br>
+         <span class="span_info_Card"><b>Producer: </b>${filmsPublished.producer}</span></br>
+         <span class="span_info_Card"><b>Score: </b> ${filmsPublished.rt_score}</span> </br>`;
+         divFilm.setAttribute("id", filmsPublished.id);
+         mainmovies.appendChild(divFilm);
 
-  }
-  
+        //creando un identificador para cada card y conectarlo con el id de la película
+        const identityMovie = document.getElementById(filmsPublished.id)
+        identityMovie.addEventListener("click", newPageInfoMovie);
+        function newPageInfoMovie (){
+            mainmovies.innerHTML = "";
+            //oculta los elementos del divFilms
+            document.querySelector(".section_welcome").style.display = "none";
+            document.querySelector(".content-text").style.display = "none";
+            document.querySelector(".content-biography").style.display = "none";
+            document.querySelector(".span_search").style.display = "none";
+            document.querySelector(".header").style.position="absolute";
 
-showInfoMovies(films);
+            //colocar en un aside la portada de la película
+            const asideInfoMovie = document.createElement("aside");
+            asideInfoMovie.classList.add("aside_info_movie");
+            asideInfoMovie.innerHTML=`<img src="${filmsPublished.cover}" /><br>`;
+            
+            //sección de la descripción de la película
+            const sectionDescripMovie = document.createElement("section");
+            sectionDescripMovie.classList.add("section_descrip_movie");
+            sectionDescripMovie.innerHTML=`
+            <b><h3 class="div_aside_h3_title">${filmsPublished.title}</h3></b></br>
+            <span class="span_descrip_Card"><b>Año publicación: </b>${filmsPublished.release_date}</span></br>
+            <span class="span_descrip_Card"><b>Director: </b>${filmsPublished.director}</span></br>
+            <span class="span_descrip_Card"><b>Producer: </b>${filmsPublished.producer}</span></br>
+            <span class="span_descrip_Card"><b>Score: </b>${filmsPublished.rt_score}</span>
+            <span class="span_descrip_Card"><div class="span_descrip_Card1"><b>Sipnosis: </b>${filmsPublished.description}</div></br></br></span></br>`;
 
+            //sección de los personajes
+            //se crea un div solo para el título porque de lo contrario repetiría si lo escribes junto al foreach
+            const peopleTitleSection = document.createElement("section");
+            peopleTitleSection.classList.add("section_title_people");
+            peopleTitleSection.innerHTML+=`<b><h2 class= "h2_section_people">Personajes: </h2></b></br>`
 
-//declaración de variables para que aparezcan dentro de los selects del HTML
-/*declarando variables para el año de publicación*/
-const yearMovie = films.map((item) => { return item.release_date });
+            const sectionPeopleMovie = document.createElement("section");
+            sectionPeopleMovie.classList.add("section_people_movie"); 
+
+            const peopleMovie = filmsPublished.people;
+            peopleMovie.forEach((people) => {  
+            sectionPeopleMovie.innerHTML+=`
+            <img src="${people.img}" class="div_img_people" /><br>
+            <b><h3 class="name_people"><p class="name_people">Nombre: ${people.name}</h3></b></br>
+            <span class="span_info_People"><b>Edad: </b>${people.age}</span></br>
+            <span class="span_info_People"><b>Sexo: </b>${people.gender}</span></br>
+            <span class="span_info_People"><b>Color de ojo: </b>${people.eye_color}</span></br>
+            <span class="span_info_People"><b>Color de cabello: </b>${people.hair_color}</span></br>
+            <span class="span_info_People"><b>Especie: </b>${people.specie}</span></br>`;
+
+            //sección de los escenarios
+            //se crea un div solo para el título porque de lo contrario repetiría si lo escribes junto al foreach
+                      // //sección de los escenarios
+            // //se crea un div solo para el título porque de lo contrario repetiría si lo escribes junto al foreach
+            const locationTitleSection = document.createElement("section");
+            locationTitleSection.classList.add("section_title_location");
+            locationTitleSection.innerHTML+=`<b><h2 class= "h2_section_location">Locaciones: </h2></b></br>`
+
+            const sectionLocationMovie = document.createElement("section");
+            sectionLocationMovie.classList.add("section_location_movie"); 
+
+            const locationMovie = filmsPublished.locations;
+            locationMovie.forEach((location) => {  
+            sectionLocationMovie.innerHTML+=`
+            <img src="${location.img}" class="div_img_location" /><br>
+            <b><h3 class="name_location"><p class="name_location">Nombre: ${location.name}</h3></b></br>
+            <span class="span_info_Location"><b>Color de cabello: </b>${location.climate}</span></br>
+            <span class="span_info_Location"><b>Especie: </b>${location.terrain}</span></br>`;
+
+            
+            peopleTitleSection.append(sectionPeopleMovie);
+            mainmovies.append(asideInfoMovie, sectionDescripMovie, peopleTitleSection );
+        })         
+   })
+    }
+})}
+ showInfoMovies(films);
+
+// /*Usando el map para buscar el año de publicación*/
+const yearMovie = films.map((item) => {return item.release_date});
 const moviePremier = yearMovie.filter((item, index) => {
-    return yearMovie.indexOf(item) === index;
-})
-//console.log(moviePubli);
+    return yearMovie.indexOf(item) === index;})
+///////declaración de variables para que aparezcan las películas dentro de los selects del HTML    
 const yearMoviesPublished = document.querySelector("#input_publication0");
 for (let i = 0; i < moviePremier.length; i++) {
     let yearMovieTittle = `
-    <option value="${moviePremier[i]}">${moviePremier[i]}</option>
-`/*el value vendría a ser moviepremier que representa al filtro de las peliculas con sus índices*/
-    yearMoviesPublished.innerHTML += yearMovieTittle;
+    <option value="${moviePremier[i]}">${moviePremier[i]}</option>`
+yearMoviesPublished.innerHTML += yearMovieTittle;
 }
-/*declarando variables para buscar el productor*/
-const nameProducer = films.map((item) => { return item.producer });
-const movieProducer = nameProducer.filter((item, index) => {
-    return nameProducer.indexOf(item) === index;
-});
-
-const nameProductors = document.querySelector("#input_publication1");
-for (let i = 0; i < movieProducer.length; i++) {
-    let nameProducerGhibli = `
-    <option value="${movieProducer[i]}">${movieProducer[i]}</option>
-`/*el value vendría a ser moviepmovieProducerremier que representa al filtro de los productores con sus índices*/
-    nameProductors.innerHTML += nameProducerGhibli;
-}
-
-//Filtrado ascendente
-const filterOrderAZ = document.querySelector("#input_publication2");
-filterOrderAZ.addEventListener("change", () => {
-    const filmsOrderAsc = films.sort(function (a, b) {
-        if (filterOrderAZ.value === "A-Z") {
-            if (a.title > b.title) {
-                return 1;
-            } if (a.title < b.title) {
-                return -1;
-            }
-        }
-        return 0;
-    })
-    //console.log(filmsOrderAsc);
-    showInfoMovies(filmsOrderAsc);
-})
-//Filtrado descendente
-const filterOrderZA = document.querySelector("#input_publication2");
-filterOrderZA.addEventListener("change", () => {
-    const filmsOrderDesc = films.sort(function (a, b) {
-        if (filterOrderZA.value === "Z-A") {
-            if (a.title < b.title) {
-                return 1;
-            } if (a.title > b.title) {
-                return -1;
-            }
-        }
-        return 0;
-    })
-
-    //console.log(filmsOrderDesc);
-    showInfoMovies(filmsOrderDesc);
-})
-
-
-//declaración de variables para que filtren
-//hacer click a los años de las publicaciones de las peliculas para que aparezcan los titles que se hicieron ese año
-const filterYearPublisher = document.querySelector("#input_publication0");
-filterYearPublisher.addEventListener("change", () => {
-
+/*filtro de los años que se crearon las películas*/
+const selectYearPublisher = document.querySelector("#input_publication0");
+selectYearPublisher.addEventListener("change", () => {
     const filterMoviexYear = films.filter(function (film) {
         //console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
-        if (film.release_date === filterYearPublisher.value) {
+        if (film.release_date === selectYearPublisher.value) {
             return true;
         } else {
             return false;
         }
     })
-    //console.log(filterMoviexYear);
     showInfoMovies(filterMoviexYear);
 });
+// //borrando duplicados de la data para que aparezca en los selects
+// const noInfoDuplicates = (array) => { 
+// const result  = array.filter((item, index) => {
+//     return array.indexOf(item) === index;
+// });
+// return result;};//
 
-//hacer click a los productores de las peliculas para que aparezcan los titles que produjeron
-const filternameProducer = document.querySelector("#input_publication1");
-filternameProducer.addEventListener("change", () => {
+// /*Declarando variables para buscar el productor*/
 
+const searchDuplicateProducter = films.map((item) => { return item.producer });
+const noDuplicatemovieProducer = searchDuplicateProducter.filter((item, index) => {
+    return searchDuplicateProducter.indexOf(item) === index;});
+
+const selectNameProducer = document.querySelector("#input_publication1");
+for (let i = 0; i < noDuplicatemovieProducer.length; i++) {
+    let nameProducer = `
+    <option value="${noDuplicatemovieProducer[i]}">${noDuplicatemovieProducer[i]}</option>`   
+    selectNameProducer.innerHTML += nameProducer;
+}
+/*filtro de los productores de las peliculas para que aparezcan los titles que produjeron*/
+
+selectNameProducer.addEventListener("change", () => {
     const filterMoviexProducer = films.filter(function (name) {
         //console.log(typeof name.producer, typeof filternameProducer.value, name.producer, filternameProducer.value)
-        if (name.producer === filternameProducer.value) {
+        if (name.producer === selectNameProducer.value) {
             return true;
         } else {
             return false;
         }
     })
-    //console.log(filterMoviexProducer);
     showInfoMovies(filterMoviexProducer);
 });
 
-//hacer filtro de las movies mejores rankeadas
-const filterMoviesTop10 = document.querySelector("#input_publication3");
-filterMoviesTop10.addEventListener("change", () => {
-    const filterMoviexTop10 = films.sort(function (c, d) {
-        if (filterMoviesTop10.value === "Mejores rankeadas") {
-            if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
+/*filtrado ascendente y descendente alfabéticamente*/
+const selectSortOrder = document.querySelector("#input_publication2");
+selectSortOrder.addEventListener("change", () => {
+    showInfoMovies(sortData(films,selectSortOrder.value))
+});
 
-                return 1;
-            } if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
-                return -1;
-            }
-        }
-        return 0;
-    })
-
-    //console.log(filterMoviexTop10.slice(0,5));
-    showInfoMovies(filterMoviexTop10.slice(0, 5));
+/*filtrado ranking por puntaje de películas*/
+const selectRankingMovies = document.querySelector("#input_publication3");
+selectRankingMovies.addEventListener("change", () => {
+    showInfoMovies(sortMovieRanking(films,selectRankingMovies.value))
 });
 
 
-//hacer filtro de las movies peores rankeadas
-const filterMoviesTop5 = document.querySelector("#input_publication3");
-filterMoviesTop5.addEventListener("change", () => {
-
-    const filterMoviexTop5 = films.sort(function (e, f) {
-        if (filterMoviesTop5.value === "Menos rankeadas") {
-
-            if (parseInt(e.rt_score) > parseInt(f.rt_score)) {
-                return 1;
-            } if (parseInt(e.rt_score) < parseInt(f.rt_score)) {
-                return -1;
-            }
-        }
-        return 0;
-    })
-    //console.log(filterMoviexTop5.slice(0,5));
-    showInfoMovies(filterMoviexTop5.slice(0, 5));
-});
-
-
-//ver el detalle de las películas
-
-
-
-/*
-const showAllFilms = document.getElementById("showAllFilms");
-/*const deleteNodo = (showFilms) => {
-  while(showFilms.lastChild){
-      showFilms.removeChild(showFilms.lastChild);
-  }
-}*/
-
-// const showFilmInScreen = (arrayData) =>{
-//   //deleteNodo(showAllFilms);
-//   if(arrayData.length === 0){
-//     const messegeError = document.createElement('div');
-//     messegeError.innerHTML=  `<h1> Not found this movie </h1> <img src="img/error01.gif" alt="" class="imgNotFoundSearch">`;
-//     showAllFilms.appendChild(messegeError);
-//   }
-
-
-//     arrayData.forEach((filmsPublished) =>{
-      
-//         const divFilms = document.createElement("div");
-//         divFilms.classList.add("card");
-//         divFilms.innerHTML =`<center><img src=${filmsPublished.poster} alt=""/></center><br>
-//         <span class= "spanFilm"><b><p class= "p_div_card_title"> ${filmsPublished.title}</p></b></span></br>
-//         <span class= "spanFilm"><b>Fecha de publicación: </b></span><p class= "p_div_card">${filmsPublished.release_date}</p>
-//         <span class= "spanFilm"><b>Descripción: </b></span><p class= "p_div_card">${filmsPublished.description}</p>
-//         <span class= "spanFilm"><b>Director: </b></span><p class= "p_div_card">${filmsPublished.director}</p>
-//         <span class= "spanFilm"><b>Productor: </b></span><p class= "p_div_card">${filmsPublished.producer}</p>
-//         <span class= "spanFilm"><b>Puntuación: </b></span><p class= "p_div_card">${filmsPublished.rt_score}</p>
-//         `;
-//         divFilms.setAttribute("id", filmsPublished.id);
-//         mainmovies.appendChild(divFilms);
-
-//         const identificador = document.getElementById(filmsPublished.id)
-//         identificador.addEventListener("click", () => {
-        
-//         function newScreen() {
-//             //deleteNodo(mainmovies);
-//             mainmovies.textContent = "";
-//             //quita y muestra elementos del divFilms
-//             document.getElementsByClassName("section_welcome").style.display = "none";
-//             document.getElementsByClassName(".contenedor-texto").style.display = "none";
-//             document.getElementsByClassName(".contenido-biography").style.display = "none";
-//             document.getElementsByClassName(".span_search").style.display = "none";
-//             document.getElementsByClassName("header").style.position="absolute";
-
-//             const article = document.createElement("article");
-//             article.classList.add("articleNewS");
-    
-//             const asideSection = document.createElement('aside');
-//             asideSection.classList.add("aside")
-//             asideSection.innerHTML= `<h1 class="titleNewScreen">${filmsPublished.title}</h1>
-//             <img src=${filmsPublished.poster} class="editImg">
-//             <div class="boxAside"> <p class="asideP"><span class="spanDescription">Release Date: </span>${filmsPublished.release_date}</p>
-//             <p class="asideP"><span class="spanDescription">Director:</span> ${filmsPublished.director}</p>
-//             <p class="asideP"><span class="spanDescription">Producer:</span> ${filmsPublished.producer}</p> </div>`;
-//             const mainSection = document.createElement("section");
-//             mainSection.classList.add("mainSection");
-//             mainSection.innerHTML=`<div class="boxDescription"><h3 class="subTitleBox">Description:</h3> <p class="fontF">${filmsPublished.description}</p></div>`;
-//             //VEHICLES        
-//             const vehicleLoop = document.createElement('section');
-//             vehicleLoop.classList.add("sectionVehicles");
-//             vehicleLoop.innerHTML=`<h3 class="subTitleVehicles">Vehicles: </h3>`;
-//             const vehicles = filmsPublished.vehicles;
-//             if(vehicles.length === 0){
-//               vehicleLoop.innerHTML=`<h3 class="subTitleError">Vehicles:</h3> <div class="addFlexError"> There are no vehicles.</div>`;
-//             }else{
-//               for (let i = 0; i < vehicles.length; i++) {
-//                 vehicleLoop.innerHTML+=`
-//                 <div class="tarjeta-wrap">
-//                   <div class="tarjeta">
-//                     <div class="adelante">
-//                       <h1 class="designNameCard">${vehicles[i].name}</h1>
-//                       <img src=" ${vehicles[i].img}" alt="" class="imgDesignCard">
-//                     </div>
-//                     <div class="atras"> 
-//                       <div class="decriptionCharacters">
-//                         <p><span class="spanDescription">Description:</span> ${vehicles[i].description}</p>
-//                         <p><span class="spanDescription">Vehicle class: </span>${vehicles[i].vehicle_class}</p>
-//                         <p><span class="spanDescription">Length:</span> ${vehicles[i].length}</p>
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </div>`;
-//               }
+////////codigo prueba
+// /*filtro de las películas mejores rankeadas*/
+// const selectBestTopMovies = document.querySelector("#input_publication3");
+// selectBestTopMovies.addEventListener("change", () => {
+//     const topMovies= films.sort(function (c, d) {
+//         if (selectBestTopMovies.value === "Mejores rankeadas") {
+//             if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
+//                 return 1;
+//             } if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
+//                 return -1;
 //             }
-            
-//             //CONTAINER ALL PEOPLE
-//             const peopleSection =document.createElement("section");
-//             peopleSection.classList.add("peopleSection")//WRAP
-//             peopleSection.innerHTML=`<h3 class="subTitlePeople">People:</h3>`;
-            
-//             //BOX ALL CHARACTERS    
-//             const peopleLoop = document.createElement('section');
-//             peopleLoop.classList.add("boxAllCharacters");
-       
-//             const character = filmsPublished.people;
-//             for (let index = 0; index < character.length-1; index++) {
-//               peopleSection.innerHTML+=`
-//               <div class="tarjeta-wrap">
-//                 <div class="tarjeta">
-//                   <div class="adelante">
-//                     <h1 class="designNameCard">${character[index].name}</h1>
-//                     <img src=" ${character[index].img}" alt="" class="imgDesignCard">
-//                   </div>
-//                   <div class="atras"> 
-//                     <div class="decriptionCharacters">
-//                       <p><span class="spanDescription">Gander:</span> ${character[index].gender}</p>
-//                       <p><span class="spanDescription">Age: </span>${character[index].age}</p>
-//                       <p><span class="spanDescription">Eye color:</span> ${character[index].eye_color}</p>
-//                       <p><span class="spanDescription">Hair color:</span> ${character[index].hair_color}</p>
-//                       <p><span class="spanDescription">Specie:</span>  ${character[index].specie}</p>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>`;
-//             }
-            
-//             //LOCATIONS
-//             const sectionLocations = document.createElement('section');
-//             sectionLocations.classList.add("sectionLocation")
-    
-//             sectionLocations.innerHTML=`<h3 class="subTitleLocation">Locations:</h3>`;
-//             const locations = filmsPublished.locations;
-//             if(locations.length === 0){
-//               sectionLocations.innerHTML=`<h3 class="subTitleError">Locations:</h3> <div class="addFlexError"> There are no locations.<img class="errorVehicles"src="img/totoroLlorando.gif"></div>`;
-//             }else{
-//               for (let i = 0; i < locations.length-1; i++) {
-//                 sectionLocations.innerHTML+=`
-//                 <div class="tarjeta-wrap">
-//                   <div class="tarjeta">
-//                     <div class="adelante">
-//                       <h1 class="designNameCard">${locations[i].name}</h1>
-//                       <img src=" ${locations[i].img}" alt="" class="imgDesignCard">
-//                     </div>
-//                     <div class="atras"> 
-//                       <div class="decriptionCharacters">
-//                         <p><span class="spanDescription">Climate:</span> ${locations[i].climate}</p>
-//                         <p><span class="spanDescription">Terrain:</span> ${locations[i].terrain}</p>
-//                         <p><span class="spanDescription">Surface water:</span>  ${locations[i].surface_water}</p>
-//                         <p><span class="spanDescription">Residents:</span>  ${locations[i].residents}</p>
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </div>`;
-//               }
-//             }
-//             showAllFilms.append(article);
-//             article.append(asideSection, mainSection);  
-//             peopleSection.append(peopleLoop);
-//             mainSection.append( peopleSection, sectionLocations, vehicleLoop);
-            
-//           }
-//           newScreen()
-//         });
-//         count.innerHTML=`Count <span id="spanCount">(${arrayData.length})</span>`;
-        
-//         //return showAllFilms;
-//     }
-//     )}
-//     showFilmInScreen(films);
+//         }
+//         return 0;
+//     })
+//     showInfoMovies(topMovies.slice(0, 5));
+// });
 
-//Creamos una función que se encargue de crear la tabla:
-const createTable = (array) => {
-  mainmovies.innerHTML+=`<tr><th>Nombre</th>
-  <th>Género</th><th>Edad</th><th>Color de ojos</th>
-  <th>Color de cabello</th></tr>`;
-   
-  for(let i = 0; i<array.length; i++){
-    mainmovies.innerHTML+=`<tr><td>${array[i].name}</td>
-      <td>${array[i].gender}</td>
-      <td>${array[i].age}</td>
-      <td>${array[i].eye_color}</td>
-      <td>${array[i].hair_color}</td></tr>`;
-  }
-  return array;
-  
-};
-console.log(createTable);
+// // /*filtro de las movies peores rankeadas*/
+// const selectLeastTopMovies = document.querySelector("#input_publication3");
+// selectLeastTopMovies.addEventListener("change", () => {
+//     const leastMovies = films.sort(function (e, f) {
+//         if (selectLeastTopMovies.value === "Menos rankeadas") {
+//             if (parseInt(e.rt_score) > parseInt(f.rt_score)) {
+//                 return 1;
+//             } if (parseInt(e.rt_score) < parseInt(f.rt_score)) {
+//                 return -1;
+//             }
+//         }
+//         return 0;
+//     })
+//     showInfoMovies(leastMovies.slice(0, 5));
+// });

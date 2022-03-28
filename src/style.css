@@ -12,13 +12,12 @@ body{
 	background: url('img/descarga1.png');
 	background-attachment: fixed; /*se mantiene fijo el background mientras se scrollea*/
 }
-
 header{
+	margin: auto;
 	position: fixed; /*se fija la position del header*/
 	width: 100%;
 	top:0;
 }
-
 nav {
 	background: linear-gradient(to bottom right, #ff8d3f, #af1c1c );/* */
 	height: 80px;
@@ -30,7 +29,7 @@ nav {
   }
  .header__image_logo{
 	width: 13em;
-	margin-left: -40px;
+	margin-left: -10px;
 
 }
 .nav_menu{
@@ -60,11 +59,12 @@ width: max-content;/*no corta el contenido que tiene más de 1 palabra*/
 /*botones del header*/
 
 .check_boton{
-	font-size: 50px;
+	display: block;
+	font-size: 30px;
 	color: #fff;
 	float: right;
-	line-height: 80px;
-	margin-right: 50px;
+	line-height: 43px;
+	margin-right: 60px;
 	cursor: pointer;
 	display: none; /*solo tiene que verse en dispositivos pequeños*/
 }
@@ -80,21 +80,28 @@ width: max-content;/*no corta el contenido que tiene más de 1 palabra*/
 	
 	  }
 	  /*media para el header*/
-	  @media (max-width: 1152px) {
+	  @media (min-width: 800px) {
+		#section_welcome{
+			background: url("img/bienvenida.gif") no-repeat;
+			background-size: cover;
+			background-position: center center;
+			height: calc(150vh - 80px);
+		
+		  }
 		.link-image{
-		  padding-left: 20px;
+		padding-left: 20px;
 		}
 		nav ul li a{
-		  font-size: 16px;
-		 margin-top: 0;
+		font-size: 16px;
+		margin-top: 0;
 		}
 		audio{
 		visibility: hidden;
 		}
-	  }
-	  @media (max-width: 1152px) {
+	}
+	@media (max-width: 801px) {
 		.check_boton{
-		  display: block;
+		display: block;
 		}
 
 		.nav_menu{
@@ -109,13 +116,13 @@ width: max-content;/*no corta el contenido que tiene más de 1 palabra*/
 		transition: all .8s;
 		}
 
-		.list__header{
+		.list_header{
 		display:block;
 		margin:35px 0;
 		line-height:20px;
 
 		}
-		.nav_ul_list__a{
+		.nav_ul_list_a{
 		font-size: 20px
 		}
 		li a.hover{
@@ -130,7 +137,7 @@ width: max-content;/*no corta el contenido que tiene más de 1 palabra*/
 #text-welcome1{
 	font-family: "Boogaloo", cursiva;
 	text-align: center;
-	font-size: 170px;
+	font-size: 180px;
 	color: #fff;
 	margin-top:1.2em;
 	text-shadow: 6px 9px  rgba(0, 0, 0, 0.9);
@@ -185,7 +192,7 @@ footer{
     text-align: center;
 	font-size: 20px;
 }
-#contenido-studio{
+#content-studio{
 	max-width: 400px;
 }
 #table-info {
@@ -215,14 +222,13 @@ td		{
 		font-size: 16px;
 		}
 
-#contenedor-texto 
-{
+#content-text {
 	display: flex;
 	text-align: justify;	
 	margin-left: 40px;
 }
 
-#contenido-biography{
+#content-biography{
 		font-family: 'Short Stack', cursiva;
 		padding: 70px 20px;
 	}
@@ -243,24 +249,24 @@ td		{
 	text-align: center;
 }*/
 
-	
 
 main{
 	display: flex;
 	font-family: 'Short Stack', cursiva;
 	width: auto; 
-	padding: 0 100px;
+	/* padding: 80px 50px; se quito por si acaso*/ 
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	font-size: 14px;
-
-	
-	
+	font-size: 14px;	
 }
-/*aparezca cursor pointer al pasar por la imagen del main*/
-main #contenido-peliculas .contenedor_movies img{
-	cursor: pointer;
+
+.div_content_movies {
+	 margin: 90px 10px;
+}
+
+.div_content_movies img{
+	cursor: pointer;/*aparezca cursor pointer al pasar por la imagen del main*/
 }
 .contenedor_section_h3__movti{
 	color: #D21119;
@@ -270,17 +276,17 @@ main #contenido-peliculas .contenedor_movies img{
 	
 }
 
+/*se le da estilo a la galeria de imágenes */
 .div_img_movie{
-	
 	width:220px;
 	height: 310px;
 	padding: 10px 10px;
-	margin: 0 20px 20px 20px;/*se le da centrado a la galeria de imágenes */
+	margin: 0 20px 20px 20px;/*se le da centrado*/
 	box-shadow: 4px 4px 6px 3px rgb(0 0 0 / 40%);
-	
 	/*border: 5px solid #000;*/
 	background-color: #fff;
 }
+
 .div_img_moviegif{
 	width:90%;
 	height: 90%;
@@ -289,7 +295,7 @@ main #contenido-peliculas .contenedor_movies img{
 
 	
 }
-.div_contenido_movies{
+.span_info_Card{
 	margin: 0 20px;
 	
 }
@@ -314,10 +320,10 @@ main #contenido-peliculas .contenedor_movies img{
 }
 .section-input_text{
 	border-radius: 10em;
-	width: 20em;
-  	height:2em;
+	font-size: 18px;
+	width: 15em;
+	height:2em;
 	border: 4px #ffa94d outset;
-
 }/*
 .div-img-search{
 	width: 18px;
@@ -453,5 +459,95 @@ main .card{
 	margin: 100px;
 	width:auto;
 	height:auto;
-	background-color:red;
+	background-color: #f7fed4;
   }
+
+  .contenido-stadistics{
+	  /* visibility: hidden; */
+	  font-family: "Short stack", cursiva;
+	  padding: 40px;
+  }
+
+/*estilos para los cards de las tarjetas al momento de darles click*/
+
+  .div_aside_h3_title{
+	margin:25px;
+	font-size: 70px;
+	color: #fff;
+	font-family: 'Hanalei Fill', cursiva;
+	margin-left: 25px;
+  }
+  .span_descrip_Card{
+	font-size: 20px;
+	margin-left: 25px;
+	color: #fff;
+
+  }
+  /*imagen de la película elegida*/
+  .aside_info_movie img{
+	  position: relative; /*al div padre se le pone esto*/ 
+	  margin: auto;
+	 
+	  height: calc(150vh - 80px);
+	  left: 0; 
+	  width: 1348px;
+	  height: 688px;
+  }
+
+.section_descrip_movie{
+	background-color: #000;
+	opacity: 90%;
+	width: 500px;
+	height: 688px;
+	position: absolute; /*al div hijo se le pone esto*/
+	left: 0; 
+	margin-top: 0;
+	text-align: justify;
+}
+/*se le crea otro div para acomodar la sipnosis dentro de la imagen*/
+.span_descrip_Card1{
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+/*formato a la section section_people_movie*/
+.h2_section_people{
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: -580px;
+}
+/* .section_people_movie{
+	margin-left: -260px;
+} */
+.div_img_people{
+	width: 230px;
+	height: 300px;
+	padding: 10px 10px;
+	margin: 0 20px 20px 20px;/*se le da centrado a la galeria de imágenes */
+	box-shadow: 4px 4px 7px 7px rgb(0 0 0 / 40%);
+	background-color: #fff;
+	margin: auto;
+	/* display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between; */
+}
+
+.section_title_people{
+	width:200px;
+	padding-left: 50px;
+} 
+.section_people_movie{
+	
+	font-family: 'Short Stack', cursiva;
+	font-size: 14px;	
+}
+
+.span_descrip_Card{
+	margin: 0 25px;
+}
+
+.span_info_People{
+	float: left;
+	margin: 0 20px;
+}
