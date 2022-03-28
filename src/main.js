@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { sortData } from './data.js';
+import { sortData, sortMovieRanking, filterYearPublisher } from './data.js';
 const films = data.films;
 const mainMovies = document.querySelector("main");
 //const count = document.querySelector(".count");
@@ -30,27 +30,9 @@ function showInfoMovies(filmsPublished)
     </div>
     `;
     mainMovies.innerHTML += movieGhibli;
-    /*let divFilms= document.getElementById("contenido-peliculas");
-    divFilms.setAttribute("id", filmsPublished[i].id);
-    mainMovies.appendChild(divFilms);*/
-
-    /*let identificador = document.getElementById(`${filmsPublished[i].id}`)
-    //("38" + filmsPublished[i].title)
-    identificador.addEventListener("click", () => {
-    //console.log("click" + filmsPublished[i].id);
-    //console.log("click" + filmsPublished[i].title);
-    mainMovies.innerHTML = "";
-    //quita y muestra elementos del divFilms
-    document.querySelector(".section_welcome").style.display = "none";
-    document.querySelector(".contenedor-texto").style.display = "none";
-    document.querySelector(".contenido-biography").style.display = "none";
-    document.querySelector(".span_search").style.display = "none";
-    document.querySelector(".header").style.position="absolute";
-    });*/
     }
 }
 showInfoMovies(films);
-
 
 //declaración de variables para que aparezcan dentro de los selects del HTML
 /*declarando variables para el año de publicación*/
@@ -97,69 +79,25 @@ filternameProducer.addEventListener("change", () => {
     showInfoMovies(filterMoviexProducer);
 });
 
-//Filtrado ascendente y descendente
+//Filtrado ascendente y descendente alfabéticamente
 const sortDataMovie = document.querySelector("#input_publication2");
 sortDataMovie.addEventListener("change", () => {
     showInfoMovies(sortData(films,sortDataMovie.value))
 });
 
+/*filtrado ranking por puntaje de películas*/
+const selectRankingMovies = document.querySelector("#input_publication3");
+selectRankingMovies.addEventListener("change", () => {
+    showInfoMovies(sortMovieRanking(films,selectRankingMovies.value))
+});
+
 //declaración de variables para que filtren
 //hacer click a los años de las publicaciones de las peliculas para que aparezcan los titles que se hicieron ese año
-const filterYearPublisher = document.querySelector("#input_publication0");
-filterYearPublisher.addEventListener("change", () => {
+const filterDataMovie = document.querySelector("#input_publication0");
+filterDataMovie.addEventListener("change", () => {
+/*debugger*/
 
-    const filterMoviexYear = films.filter(function (film) {
-        //console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
-        if (film.release_date === filterYearPublisher.value) {
-            return true;
-        } else {
-            return false;
-        }
-    })
-    //console.log(filterMoviexYear);
-    showInfoMovies(filterMoviexYear);
+    showInfoMovies(filterYearPublisher(films, filterDataMovie.value));
 });
-
-
-
-//hacer filtro de las movies mejores rankeadas
-const filterMoviesTop10 = document.querySelector("#input_publication3");
-filterMoviesTop10.addEventListener("change", () => {
-    const filterMoviexTop10 = films.sort(function (c, d) {
-        if (filterMoviesTop10.value === "Mejores rankeadas") {
-            if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
-
-                return 1;
-            } if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
-                return -1;
-            }
-        }
-        return 0;
-    })
-
-    //console.log(filterMoviexTop10.slice(0,5));
-    showInfoMovies(filterMoviexTop10.slice(0, 5));
-});
-
-
-//hacer filtro de las movies peores rankeadas
-const filterMoviesTop5 = document.querySelector("#input_publication3");
-filterMoviesTop5.addEventListener("change", () => {
-
-    const filterMoviexTop5 = films.sort(function (e, f) {
-        if (filterMoviesTop5.value === "Menos rankeadas") {
-
-            if (parseInt(e.rt_score) > parseInt(f.rt_score)) {
-                return 1;
-            } if (parseInt(e.rt_score) < parseInt(f.rt_score)) {
-                return -1;
-            }
-        }
-        return 0;
-    })
-    //console.log(filterMoviexTop5.slice(0,5));
-    showInfoMovies(filterMoviexTop5.slice(0, 5));
-});
-
 
 
