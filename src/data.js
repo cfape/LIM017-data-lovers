@@ -1,8 +1,10 @@
-//Función orden ascendente y descendente
-export const sortData = (films,sortDataMovie) => {
-  //console.log(films);
-    if (sortDataMovie === "A-Z") {
-      films.sort((a,b) => {
+//  import films from './main.js';
+
+/*objeto ordena ascendente y descendente*/
+export const sortData = (data,sortOrder) => {
+  //console.log(data);
+    if (sortOrder === "A-Z") {
+      data.sort((a,b) => {
         if (a.title > b.title) {
             return 1;
         }else if (a.title < b.title) {
@@ -10,10 +12,9 @@ export const sortData = (films,sortDataMovie) => {
         }
         return 0;
     })
-
   }
   else {
-  films.sort((a, b) => {
+  data.sort((a, b) => {
     if (a.title > b.title) {
       return -1;
     }else if (a.title < b.title) {
@@ -21,17 +22,48 @@ export const sortData = (films,sortDataMovie) => {
     }
     return 0;
   })
-
 }
-return films;
+return data;
 };
+/*objeto ordena mejores y menos rankeadas*/
+export const sortMovieRanking =(data, sortOrder) => {
+        if (sortOrder === "Menos rankeadas") {
+          data.sort((c,d) => { 
+            if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
+                return 1;
+            } else if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
+                return -1;
+            }
+            return 0;
+        })
+    }
+else {
+  data.sort((c,d)=>{
+    if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
+        return -1;
+    } if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
+        return 1;
+    }
+    return 0;
+})
+}
+return data;
+}
 
-export const anotherExample = () => {
-  return 'OMG';
+///Función Año de Publicación
+export const filterYearPublisher = (films ,release_date) => {
+  //console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
+  const filterMovie = films.filter ((film) => {
+  if (release_date === film.release_date) {
+    return true;
+  } else {
+      return false;
+  }});
+  return filterMovie;
 };
 
 /*objeto ordena mejores y menos rankeadas*/
-export const sortMovieRanking =(data, sortOrder) => {
+/*export const sortMovieRanking =(data, sortOrder) => {
 if (sortOrder === "Menos rankeadas") {
 data.sort((c,d) => {
     if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
@@ -53,10 +85,10 @@ else {
   })
 }
   return data;
-}
+}*/
 
 //Función Año de Publicación
-export const filterYearPublisher = (films ,release_date) => {
+/*export const filterYearPublisher = (films ,release_date) => {
   //console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
   const filterMovie = films.filter ((film) => {
   if (release_date === film.release_date) {
@@ -65,5 +97,5 @@ export const filterYearPublisher = (films ,release_date) => {
       return false;
   }});
   return filterMovie;
-};
+};*/
 

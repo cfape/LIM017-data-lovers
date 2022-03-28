@@ -12,7 +12,6 @@ body{
 	background: url('./img/tapiz.jpeg');
 	background-attachment: fixed; /*se mantiene fijo el background mientras se scrollea*/
 }
-
 header{
 	max-width: 1400px;
 	margin: auto;
@@ -20,7 +19,6 @@ header{
 	width: 100%;
 	top: 0;
 }
-
 nav {
 	background: linear-gradient(to bottom right, #ff8d3f, #af1c1c );/* */
 	height: 40px;
@@ -175,7 +173,6 @@ li a.hover{
 	height: 45px;
 	cursor: pointer;
 }
-
 #logo{
 	width: 7em;
 	height: 7em;
@@ -271,6 +268,7 @@ main{
 	font-size: 12px;
 }
 
+/*se le da estilo a la galeria de imágenes */
 .div_img_movie{
 	width:220px;
 	height: 310px;
@@ -289,6 +287,7 @@ main{
 }
 .span_info_Card{
 	margin: 0 20px;
+	
 }
 
 .div_title_search{
@@ -317,13 +316,14 @@ main{
 
 #main-footer{
 	font-size: 25px;
+
 }
 
-.foo-header_logorrss{
+.foo-header_logorrss{ 
 	width: 30px;
-	height:30px;
+	height:30px;	
 	margin-top:15px;
-	margin-left: 20px;
+	margin-left: 20px;	 
 }
 audio{
 	width: 12em;
@@ -348,12 +348,12 @@ main .card{
 	font-weight: 600;
 	letter-spacing: 3px;
 	padding: 0px 20px 20px 60px;
-}
-#spanCount{
-	color: #c03131;
-}
+  }
+  #spanCount{
+	  color: #c03131;
+  }
 
-.aside{
+  .aside{
 	padding: 30px;
 	height: 86vh;
 	display: flex;
@@ -384,10 +384,10 @@ main .card{
     cursor: pointer;
 }
 
-.asideP{
+  .asideP{
 	font-family: 'Nunito', sans-serif;
 	color: rgb(104, 135, 192);
-}
+  }
 
 .card img {
 	width: 95%;
