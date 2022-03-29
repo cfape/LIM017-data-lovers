@@ -216,8 +216,7 @@ td {
 	font-size: 11px;
 	}
 
-
-#contenedor-texto {
+#content-text {
 	display: flex;
 	width: 100%;
 	text-align: justify;
@@ -287,7 +286,6 @@ main{
 }
 .span_info_Card{
 	margin: 0 20px;
-	
 }
 
 .div_title_search{
@@ -319,13 +317,14 @@ main{
 
 }
 
-.foo-header_logorrss{ 
+.foo-header_logorrss{
 	width: 30px;
-	height:30px;	
+	height:30px;
 	margin-top:15px;
-	margin-left: 20px;	 
+	margin-left: 20px;
 }
 audio{
+	display: none;
 	width: 12em;
 	height: 21px;
 	margin-left: -50em;
@@ -348,12 +347,12 @@ main .card{
 	font-weight: 600;
 	letter-spacing: 3px;
 	padding: 0px 20px 20px 60px;
-  }
-  #spanCount{
-	  color: #c03131;
-  }
+}
+#spanCount{
+	color: #c03131;
+}
 
-  .aside{
+.aside{
 	padding: 30px;
 	height: 86vh;
 	display: flex;
@@ -384,10 +383,10 @@ main .card{
     cursor: pointer;
 }
 
-  .asideP{
+.asideP{
 	font-family: 'Nunito', sans-serif;
 	color: rgb(104, 135, 192);
-  }
+}
 
 .card img {
 	width: 95%;
@@ -440,9 +439,17 @@ header{
 	top:0;
 	}
 
+.header__image_logo{
+	width: 190px;
+	height: 65px;
+	margin-left: -35px;
+	padding-top: 15px;
+	}
+
 nav {
 	background: linear-gradient(to bottom right, #ff8d3f, #af1c1c );/* */
-	height: 80px;
+	height: 83px;
+	width: 100%;
 	}
 .link-image{
 	position: absolute;
@@ -452,19 +459,14 @@ nav {
 	width: 13em;
 	margin-left: -10px;
 	}
-/*.nav_menu{
-	float: right;
-	margin-right: 20px;
-	}*/
 
 .nav_menu{
-	position:relative;
+	position:static;
 	width: 100%;
-	/*height: 235px;*/
-	/*background:  #323030 ;*/
+	height: 65px;
+	background:  transparent;
 	color: #fff;
-	/*left:-100%;*/
-	text-align: center;
+	text-align: right;
 	transition: none;
 	}
 
@@ -477,7 +479,7 @@ nav {
 	font-family: "Alumni Sans", cursiva;
 	font-weight: bold;
 	color:#fff;
-	font-size: 28px;
+	font-size: 38px;
 	width: max-content;/*no corta el contenido que tiene más de 1 palabra*/
 	}
 	.list_header:hover a {
@@ -515,62 +517,15 @@ nav {
 	background-position: center center;
 	height: 120vh;
 	width: 100%;
-	margin: 0;
+	margin-top: 40px;
 		}
-	/*media para el header*/
-		/*@media (min-width: 600px) {
-			.link-image{
-			padding-left: 20px;
-			}
-			nav ul li a{
-			font-size: 16px;
-			margin-top: 0;
-			}
-			audio{
-			visibility: hidden;
-			}
-		}
-		@media (min-width: 768px) {
-			.check_boton{
-			display: block;
-			}
-
-			.nav_menu{
-			position:fixed;
-			width: 100%;
-			height: 40vh;
-			background:  #323030 ;
-			color: #fff;
-			top: 80px;
-			left:-100%;
-			text-align: center;
-			transition: all .8s;
-			}
-
-			.list_header{
-			display:block;
-			margin:35px 0;
-			line-height:20px;
-
-			}
-			.nav_ul_list_a{
-			font-size: 20px
-			}
-			li a.hover{
-				background: none;
-				color: deeppink;
-			}
-			#check:checked ~ ul {
-				left:0;
-			}
-			}*/
 
 	#text-welcome1{
 		font-family: "Boogaloo", cursiva;
 		text-align: center;
 		font-size: 180px;
 		color: #fff;
-		margin-top:1.2em;
+		margin-top:0.7em;
 		text-shadow: 6px 9px  rgba(0, 0, 0, 0.9);
 	}
 	#text-welcome2{
@@ -591,31 +546,33 @@ nav {
 	}
 	#button_start{
 		font-family: "Boogaloo", cursiva;
-		background-color: #f56c57;
-		color: white;
+		background-color: #fff;
+		color: #000;
 		border-radius: 20px;
+		border-color: #000;
 		font-size: 30px;
 		width: 160px;
-		height: 80px;
+		height: 75px;
 		padding-top: 15px;
 		cursor: pointer;
 	}
 	#section_welcome #button_start:hover{
 		font-family: "Boogaloo", cursiva;
-		background-color: #d34e24;
-		color: white;
+		background-color: #d34e24, #fff;
+		color: #ffff;
 		border-radius: 20px;
+		border-color: #fff;
 		font-size: 30px;
-		width: 140px;
-		height: 60px;
+		width: 150px;
+		height: 70px;
 		cursor: pointer;
 	}
 	#logo{
-		width: 23em;
+		width: 18em;
 		height: 15em;
-		padding-left: 80px;
+		padding-left: 10px;
 		margin-top:5em;
-		margin-left: 10px;
+		margin-left: 20px;
 
 	}
 	footer{
@@ -629,9 +586,10 @@ nav {
 	}
 	#table-info {
 		display: grid;
-		width:90%;
+		width:85%;
 		padding-left: 5px;
 		padding-right: 5px;
+		margin-left: 20px;
 		text-align: justify;
 		font-family: 'Short Stack', cursiva;
 		font-size: 36px;
@@ -646,32 +604,34 @@ nav {
 		text-align: center;
 		color: #fff;
 		background-color: #af1c1c;
+		font-size: 18px;
 		}
 
 	td{
 		padding-top:15px;/*mantiene separado los textos*/
-		font-size: 16px;
+		font-size: 14px;
+		text-align: justify;
 		}
 
-#contenedor-texto{
+#contend-text{
 	display: flex;
 	text-align: justify;
 	margin-left: 40px;
+	height: 600px;
 	}
 
 #content-biography{
 	font-family: 'Short Stack', cursiva;
-	padding: 70px 20px;
-	font-size: 26.5px;
+	padding: 100px 20px 10px 10px;
+	font-size: 20px;
 	}
 #list-movies-container{
 		font-family:'Short Stack', cursiva;
 		font-size: 20px;
-		padding: -10px 35px 0px 35px;
+		padding: 100px 5px 0px 405px;
 		text-align: justify;
 	}
 .list__movies {
-
 	list-style: none;
 	}
 
@@ -708,7 +668,7 @@ main{
 	}
 .div_img_moviegif{
 	width:100%;
-	height: 500px;
+	height: 900px;
 	padding-left:70px;
 	margin-left: -40px;
 
@@ -718,12 +678,13 @@ main{
 	}
 .div_title_search{
 	font-family: "Alumni Sans", cursiva;
-	font-size:20px;
+	font-size:30px;
 	}
 .span_search{
 	width: auto;
 	height: auto;
-	padding-left: 150px;
+	padding-top: 30px;
+	padding-left: 75px;
 	justify-content: space-between;	/*trabaja con el margin o padding para el espaciado*/
 	margin-right:50px;
 	display: flex;
@@ -753,42 +714,8 @@ audio{
 	height: 21px;
 	margin-left: -50em;
 	margin-right: 5em;
+	display: none;
 	}
-	/*media para la pantalla de tablets o celulares/
-	@media only screen and (max-width: 1152px) {
-
-	#section_welcome{
-	height: calc(40vh - 4px);
-	width: calc(80vh - 8px);
-	}
-	#text-welcome1{
-	font-size: 70px;
-	margin-top:2em;
-	text-shadow: 3px 5px  rgba(0, 0, 0, 0.9);
-	}
-	#text-welcome2{
-	font-size: 20px;
-	text-shadow: 2px 2px  rgba(255, 252, 252, 0.9);
-	margin-top:1em;
-	}
-	#text-welcome3{
-	font-size: 20px;
-	text-shadow: 2px 2px  rgba(255, 252, 252, 0.9);
-
-	}
-	#button_start{
-	border-radius: 10px;
-	font-size: 15px;
-	width: 80px;
-	height: 40px;
-
-	}
-	.span_search{
-	margin-right: 150px;
-	flex-direction: columns;
-	}
-	}*/
-/*prueba*/
 main .card{
 	box-shadow: 0 0 9px 0 #c4c3c3;
 	background-color: #fcfcf9;
@@ -811,7 +738,7 @@ main .card{
 
 .aside{
 	padding: 30px;
-	height: 86vh;
+	height: 0vh;
 	display: flex;
 	flex-direction: column;
 	float:left;
@@ -859,18 +786,80 @@ main .card{
 	text-align: justify;
 	}
 
-/*gráfico de Estadísticas*/
-#stadistics_graphic_gener{
-	margin: 100px;
-	width:auto;
-	height:auto;
-	background-color: #f7fed4;
+.div_aside_h3_title{
+	margin:25px;
+	font-size: 70px;
+	color: #fff;
+	font-family: 'Hanalei Fill', cursiva;
+	margin-left: 25px;
+}
+
+.span_descrip_Card{
+	font-size: 20px;
+	margin-left: 25px;
+	color: #fff;
 	}
 
-.contenido-stadistics{
-	/* visibility: hidden; */
-	font-family: "Short stack", cursiva;
-	padding: 40px;
+.aside_info_movie img{
+	position: relative;
+	margin: auto;
+	height: calc(150vh - 80px);
+	left: 0;
+	margin-top: -60px;
+	width: 1348px;
+	height: 688px;
 	}
+
+.section_descrip_movie{
+	background-color: #000;
+	opacity: 90%;
+	width: 500px;
+	height: 688px;
+	position: absolute;
+	left: 0;
+	margin-top: -60px;
+	text-align: justify;
+}
+/*se le crea otro div para acomodar la sipnosis dentro de la imagen*/
+.span_descrip_Card1{
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+/*formato a la section section_people_movie*/
+.h2_section_people{
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: -580px;
+}
+
+.div_img_people{
+	width: 230px;
+	height: 300px;
+	padding: 10px 10px;
+	margin: 0 20px 20px 20px;/*se le da centrado a la galeria de imágenes */
+	box-shadow: 4px 4px 7px 7px rgb(0 0 0 / 40%);
+	background-color: #fff;
+	margin: auto;
+}
+
+.section_title_people{
+	width:200px;
+	padding-left: 50px;
+}
+.section_people_movie{
+
+	font-family: 'Short Stack', cursiva;
+	font-size: 14px;
+}
+
+.span_descrip_Card{
+	margin: 0 25px;
+}
+
+.span_info_People{
+	float: left;
+	margin: 0 20px;
+}
 
 }

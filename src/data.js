@@ -28,7 +28,7 @@ return data;
 /*objeto ordena mejores y menos rankeadas*/
 export const sortMovieRanking =(data, sortOrder) => {
         if (sortOrder === "Menos rankeadas") {
-          data.sort((c,d) => { 
+          data.sort((c,d) => {
             if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
                 return 1;
             } else if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
@@ -50,9 +50,8 @@ else {
 return data;
 }
 
-///Función Año de Publicación
-export const filterYearPublisher = (films ,release_date) => {
-  //console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
+//Objeto Año de Publicación
+export const filterYearPublished = (films, release_date) => {
   const filterMovie = films.filter ((film) => {
   if (release_date === film.release_date) {
     return true;
@@ -62,40 +61,13 @@ export const filterYearPublisher = (films ,release_date) => {
   return filterMovie;
 };
 
-/*objeto ordena mejores y menos rankeadas*/
-/*export const sortMovieRanking =(data, sortOrder) => {
-if (sortOrder === "Menos rankeadas") {
-data.sort((c,d) => {
-    if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
-        return 1;
-    } else if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
-        return -1;
-        }
-        return 0;
-        })
-    }
-else {
-  data.sort((c,d)=>{
-    if (parseInt(c.rt_score) > parseInt(d.rt_score)) {
-        return -1;
-    } if (parseInt(c.rt_score) < parseInt(d.rt_score)) {
-        return 1;
-    }
-    return 0;
-  })
-}
-  return data;
-}*/
-
-//Función Año de Publicación
-/*export const filterYearPublisher = (films ,release_date) => {
-  //console.log(typeof film.release_date, typeof filterYearPublisher.value, film.release_date, filterYearPublisher.value)
-  const filterMovie = films.filter ((film) => {
-  if (release_date === film.release_date) {
-    return true;
+//Objeto de Productor
+export const filterMoviexProducer = (films, nameProducer) => {
+  const selectNameProducer = films.filter ((film) => {
+  if (nameProducer === film.producer) {
+      return true;
   } else {
       return false;
   }});
-  return filterMovie;
-};*/
-
+  return selectNameProducer;
+};
