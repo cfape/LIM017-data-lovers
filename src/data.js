@@ -71,3 +71,12 @@ export const filterMoviexProducer = (films, nameProducer) => {
   }});
   return selectNameProducer;
 };
+
+
+//Objeto computeStats Producer
+//Producer
+export const computeStats = (films) => {
+  if (films === undefined || typeof films !== 'object' || films === 0 || films === null|| films.length === 0) {
+    throw new TypeError('films is not an object');
+  }
+}

@@ -403,7 +403,7 @@ main .card{
 }
 
 /*gráfico de Estadísticas*/
-#stadistics_graphic_gener{
+#content-stadistics{
 	margin: 100px;
 	width:auto;
 	height:auto;
@@ -415,6 +415,7 @@ main .card{
 	font-family: "Short stack", cursiva;
 	padding: 40px;
 }
+
 
 /*For desktop*/
 @media only screen and (min-width: 720px){
@@ -435,7 +436,7 @@ body{
 
 header{
 	position: fixed; /*se fija la position del header*/
-	width: 100%;
+	width: 100vw;
 	top:0;
 	}
 
@@ -449,7 +450,7 @@ header{
 nav {
 	background: linear-gradient(to bottom right, #ff8d3f, #af1c1c );/* */
 	height: 83px;
-	width: 100%;
+	width: 100vw;
 	}
 .link-image{
 	position: absolute;
@@ -785,6 +786,19 @@ main .card{
 .p_div_card{
 	text-align: justify;
 	}
+/*estilos para los cards de las tarjetas al momento de darles click*/
+.btnBackHome{
+	position: absolute;
+	bottom: -119px; right: 40px;
+	border-radius: 100%;
+	font-family: "Boogaloo", cursiva;
+	background-color: #fff;
+	color: #000;
+	font-size: 30px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
 
 .div_aside_h3_title{
 	margin:25px;
@@ -798,24 +812,23 @@ main .card{
 	font-size: 20px;
 	margin-left: 25px;
 	color: #fff;
-	}
+}
 
+/*imagen de la película elegida*/
 .aside_info_movie img{
-	position: relative;
+	position: relative; /*al div padre se le pone esto*/
 	margin: auto;
-	height: calc(150vh - 80px);
-	left: 0;
-	margin-top: -60px;
-	width: 1348px;
+	width: 100vw;
 	height: 688px;
-	}
+	margin-top: -60px;
+}
 
 .section_descrip_movie{
 	background-color: #000;
 	opacity: 90%;
 	width: 500px;
 	height: 688px;
-	position: absolute;
+	position: absolute; /*al div hijo se le pone esto*/
 	left: 0;
 	margin-top: -60px;
 	text-align: justify;
@@ -825,16 +838,63 @@ main .card{
 	margin-left: 25px;
 	margin-right: 25px;
 }
-
 /*formato a la section section_people_movie*/
+
+.span_title_people{
+	margin-top:-95px;
+	width: 15px;
+}
 .h2_section_people{
-	font-size: 30px;
+	font-size: 45px;
 	font-weight: bold;
-	margin-left: -580px;
+	margin-top: -250px;
+	margin-left: -38px;
 }
 
 .div_img_people{
-	width: 230px;
+	width: 300px;
+	height: 300px;
+	padding: 10px 10px;
+	margin: 0 20px 20px 20px;/*se le da centrado a la galeria de imágenes */
+	box-shadow: 4px 4px 7px 7px rgb(0 0 0 / 40%);
+	background-color: #fff;
+	margin: auto;
+}
+.section_people_movie{
+	font-family: 'Short Stack', cursiva;
+	font-size: 14px;
+	margin-top: 200px;
+	display: grid;
+	align-items: center;
+	grid-template-columns: repeat(6, 0.1fr);
+	grid-gap: 30px;
+	position: relative;
+}
+
+.span_descrip_Card{
+	margin: 0 25px;
+}
+.span_title_location{
+	margin-top:-95px;
+	width: 15px;
+}
+.h2_section_location{
+	font-size: 45px;
+	font-weight: bold;
+	margin-top: 25px;
+	/* margin-left: -580px; */
+}
+.section_location_movie{
+	font-family: 'Short Stack', cursiva;
+	font-size: 14px;
+	display: grid;
+	margin: 100px;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 30px;
+	position: relative;
+}
+.div_img_location{
+	width: 350px;
 	height: 300px;
 	padding: 10px 10px;
 	margin: 0 20px 20px 20px;/*se le da centrado a la galeria de imágenes */
@@ -843,23 +903,47 @@ main .card{
 	margin: auto;
 }
 
-.section_title_people{
-	width:200px;
-	padding-left: 50px;
+.span_title_vehicle{
+	margin-top:-95px;
+	width: 15px;
 }
-.section_people_movie{
+.h2_section_vehicle{
+	font-size: 45px;
+	font-weight: bold;
+	margin-top: 25px;
+	/* margin-left: -580px; */
+}
 
+.section_vehicle_movie{
 	font-family: 'Short Stack', cursiva;
 	font-size: 14px;
+	display: grid;
+	margin: 100px;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 30px;
+	position: relative;
 }
 
-.span_descrip_Card{
-	margin: 0 25px;
+.div_img_vehicle{
+	width: 350px;
+	height: 300px;
+	padding: 10px 10px;
+	margin: 0 20px 20px 20px;/*se le da centrado a la galeria de imágenes */
+	box-shadow: 4px 4px 7px 7px rgb(0 0 0 / 40%);
+	background-color: #fff;
+	margin: auto;
+}
+#content-stadistics{
+	display: none;
+	margin: 100px;
+	width:auto;
+	height:auto;
+	background-color: #f7fed4;
 }
 
-.span_info_People{
-	float: left;
-	margin: 0 20px;
+.contenido-stadistics{
+/* visibility: hidden; */
+	font-family: "Short stack", cursiva;
+	padding: 40px;
 }
-
 }

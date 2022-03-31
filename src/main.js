@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import { sortData, sortMovieRanking, filterYearPublished, filterMoviexProducer} from './data.js';
+import { sortData, sortMovieRanking, filterMoviexProducer} from './data.js';
 const films = data.films;
 const mainmovies = document.querySelector("main");
 
@@ -36,6 +36,7 @@ const showInfoMovies = (arrayData) =>{
             document.querySelector(".content-biography").style.display = "none";
             document.querySelector(".span_search").style.display = "none";
             document.querySelector(".header").style.position="absolute";
+            document.querySelector(".btnBackHome").style.display = "block";
 
             //colocar en un aside la portada de la película
             const asideInfoMovie = document.createElement("aside");
@@ -53,107 +54,118 @@ const showInfoMovies = (arrayData) =>{
             <span class="span_descrip_Card"><b>Score: </b>${filmsPublished.rt_score}</span>
             <span class="span_descrip_Card"><div class="span_descrip_Card1"><b>Sipnosis: </b>${filmsPublished.description}</div></br></br></span></br>`;
 
-            //sección de los personajes
-            const peopleTitleSection = document.createElement("section");
-            peopleTitleSection.classList.add("section_title_people");
-            peopleTitleSection.innerHTML+=`<b><h2 class= "h2_section_people">Personajes: </h2></b></br>`
+            //botón regresar a la página inicial
+            const btnBackHome = document.querySelector(".btnBackHome");
+            btnBackHome.addEventListener("click", backHome);
+            function backHome(){
+                mainmovies.appendChild(divFilm);
+                document.querySelector(".header").style.position = "fixed";
+                document.querySelector(".section_welcome").style.display = "block";
+                document.querySelector(".content-text").style.display = "flex";
+                document.querySelector(".content-biography").style.display = "block";
+                document.querySelector(".span_search").style.display = "flex";
+                asideInfoMovie.style.display = "none";
+                showInfoMovies(films);
+            }
 
+            //sección de los personajes
             const sectionPeopleMovie = document.createElement("section");
             sectionPeopleMovie.classList.add("section_people_movie");
+            sectionPeopleMovie.innerHTML=`<span class="span_title_people"><b><h2 class="h2_section_people">Personajes:</h2></b></span>`;
 
             const peopleMovie = filmsPublished.people;
             peopleMovie.forEach((people) => {
             sectionPeopleMovie.innerHTML+=`
-            <img src="${people.img}" class="div_img_people" /><br>
-            <b><h3 class="name_people"><p class="name_people">Nombre: ${people.name}</h3></b></br>
+            <div class="section_div_people_movie"><img src="${people.img}" class="div_img_people" /><br>
+            <div class= "div_info_people"><b><h3 class="name_people"><p class="name_people">Nombre: ${people.name}</h3></b></br>
             <span class="span_info_People"><b>Edad: </b>${people.age}</span></br>
             <span class="span_info_People"><b>Sexo: </b>${people.gender}</span></br>
             <span class="span_info_People"><b>Color de ojo: </b>${people.eye_color}</span></br>
             <span class="span_info_People"><b>Color de cabello: </b>${people.hair_color}</span></br>
-            <span class="span_info_People"><b>Especie: </b>${people.specie}</span></br>`;
+            <span class="span_info_People"><b>Especie: </b>${people.specie}</span></div></div></br>`;
+            });
 
             //sección de los escenarios
-            const locationTitleSection = document.createElement("section");
-            locationTitleSection.classList.add("section_title_location");
-            locationTitleSection.innerHTML+=`<b><h2 class= "h2_section_location">Locaciones: </h2></b></br>`
-
             const sectionLocationMovie = document.createElement("section");
             sectionLocationMovie.classList.add("section_location_movie");
+            sectionLocationMovie.innerHTML=`<span class="span_title_location"><b><h2 class= "h2_section_location">Locaciones:</h2></b></br></span>`
 
             const locationMovie = filmsPublished.locations;
             locationMovie.forEach((location) => {
             sectionLocationMovie.innerHTML+=`
-            <img src="${location.img}" class="div_img_location" /><br>
-            <b><h3 class="name_location"><p class="name_location">Nombre: ${location.name}</h3></b></br>
-            <span class="span_info_Location"><b>Cima: </b>${location.climate}</span></br>
-            <span class="span_info_Location"><b>Especie: </b>${location.terrain}</span></br>`;
-        })
-    })
-            peopleTitleSection.append(sectionPeopleMovie);
-            mainmovies.append(asideInfoMovie, sectionDescripMovie, peopleTitleSection );
-    }
+            <div class="section_div_location_movie"><img src="${location.img}" class="div_img_location" /><br>
+            <div class= "div_info_location"><b><h3 class="name_location"><p class="name_location">${location.name}</h3></b></br>
+            <span class="span_info_Location"><b>Clima: </b>${location.climate}</span></br>
+            <span class="span_info_Location"><b>Terreno: </b>${location.terrain}</span></div></div></br>`;
+            });
+
+            //sección de los vehículos
+            const sectionVehicleMovie = document.createElement("section");
+            sectionVehicleMovie.classList.add("section_vehicle_movie");
+            sectionVehicleMovie.innerHTML=`<span class="span_title_vehicle"><b><h2 class= "h2_section_vehicle">Vehículos:</h2></b></br></span>`
+
+            const vehicleMovie = filmsPublished.vehicles;
+            vehicleMovie.forEach((vehicle) => {
+            sectionVehicleMovie.innerHTML+=`
+            <div class="section_div_vehicle_movie"><img src="${vehicle.img}" class="div_img_vehicle" /><br>
+            <div class= "div_info_vehicle"><b><h3 class="name_location"><p class="name_vehicle">${vehicle.name}</h3></b></br>
+            <span class="span_info_vehicle"><b>Descripción: </b>${vehicle.description}</span></br>
+            <span class="span_info_vehicle"><b>Clase: </b>${vehicle.vehicle_class}</span></br>
+            <span class="span_info_vehicle"><b>Capacidad: </b>${vehicle.length}</span></br></div></div></br>`;
+            });
+            mainmovies.append(asideInfoMovie, sectionDescripMovie, sectionPeopleMovie, sectionLocationMovie, sectionVehicleMovie, btnBackHome );
+        }
 })}
 showInfoMovies(films);
 
-    //declaración de variables para que aparezcan dentro de los selects del HTML
-    /*declarando variables para el año de publicación*/
-    const yearMovie = films.map((item) => { return item.release_date });
-    const moviePremier = yearMovie.filter((item, index) => {
-        return yearMovie.indexOf(item) === index;})
-    ///////declaración de variables para que aparezcan las películas dentro de los selects del HTML
-    const yearMoviesPublished = document.querySelector("#input_publication0");
-        for (let i = 0; i < moviePremier.length; i++) {
-        let yearMovieTittle = `
-        <option value="${moviePremier[i]}">${moviePremier[i]}</option>`
-        yearMoviesPublished.innerHTML += yearMovieTittle;
+/*Filtro para año de publicación*/
+const yearMovie = films.map((item) => { return item.release_date });
+const moviePremier = yearMovie.filter((item, index) => {
+    return yearMovie.indexOf(item) === index;})
+///////declaración de variables para que aparezcan las películas dentro de los selects del HTML
+const yearMoviesPublished = document.querySelector("#input_publication0");
+    for (let i = 0; i < moviePremier.length; i++) {
+    let yearMovieTittle = `
+    <option value="${moviePremier[i]}">${moviePremier[i]}</option>`
+    yearMoviesPublished.innerHTML += yearMovieTittle;
 }
-    /*filtro de los años que se crearon las películas*/
-    const selectYearPublished = document.querySelector("#input_publication0");
-    selectYearPublished.addEventListener("change", () => {
-    const filterMoviexYear = films.filter(function (film) {
-        if (film.release_date === selectYearPublished.value) {
-            return true;
-        } else {
-            return false;
+/*filtro de los años que se crearon las películas*/
+const selectYearPublished = document.querySelector("#input_publication0");
+selectYearPublished.addEventListener("change", () => {
+const filterMoviexYear = films.filter(function (film) {
+    if (film.release_date === selectYearPublished.value) {
+        return true;
+    } else {
+        return false;
         }
     })
     showInfoMovies(filterMoviexYear);
 });
 
-    //declaración de variables para que filtren
-    //hacer click a los años de las publicaciones de las peliculas para que aparezcan los titles que se hicieron ese año
-    const filterDataMovie = document.querySelector("#input_publication0");
-    filterDataMovie.addEventListener("change", () => {
-    showInfoMovies(filterYearPublished(films, filterDataMovie.value));
-});
 
-    // /*Declarando variables para buscar el productor*/
-    const searchDuplicateProducter = films.map((item) => { return item.producer });
-    const noDuplicatemovieProducer = searchDuplicateProducter.filter((item, index) => {
-        return searchDuplicateProducter.indexOf(item) === index;});
+/*Filtro para buscar el productor*/
+const searchDuplicateProducter = films.map((item) => { return item.producer });
+const noDuplicatemovieProducer = searchDuplicateProducter.filter((item, index) => {
+    return searchDuplicateProducter.indexOf(item) === index;});
 
-    const selectNameProducer = document.querySelector("#input_publication1");
-    for (let i = 0; i < noDuplicatemovieProducer.length; i++) {
+const selectNameProducer = document.querySelector("#input_publication1");
+for (let i = 0; i < noDuplicatemovieProducer.length; i++) {
     let nameProducer = `
     <option value="${noDuplicatemovieProducer[i]}">${noDuplicatemovieProducer[i]}</option>`
     selectNameProducer.innerHTML += nameProducer;
-    }
-    /*filtro de los productores de las peliculas para que aparezcan los titles que produjeron*/
-    selectNameProducer.addEventListener("change", () => {
+}
+selectNameProducer.addEventListener("change", () => {
     showInfoMovies(filterMoviexProducer(films, selectNameProducer.value));
 });
 
-    /*filtrado ascendente y descendente alfabéticamente*/
-    const selectSortOrder = document.querySelector("#input_publication2");
-    selectSortOrder.addEventListener("change", () => {
-        showInfoMovies(sortData(films,selectSortOrder.value))
+/*Filtro ascendente y descendente alfabéticamente*/
+const selectSortOrder = document.querySelector("#input_publication2");
+selectSortOrder.addEventListener("change", () => {
+    showInfoMovies(sortData(films,selectSortOrder.value))
 });
 
-    /*filtrado ranking por puntaje de películas*/
-    const selectRankingMovies = document.querySelector("#input_publication3");
-    selectRankingMovies.addEventListener("change", () => {
-        showInfoMovies(sortMovieRanking(films,selectRankingMovies.value))
+/*Filtro ranking por puntaje de películas*/
+const selectRankingMovies = document.querySelector("#input_publication3");
+selectRankingMovies.addEventListener("change", () => {
+    showInfoMovies(sortMovieRanking(films,selectRankingMovies.value))
 });
-
-
-
