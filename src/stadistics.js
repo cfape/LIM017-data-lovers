@@ -1,70 +1,71 @@
-// import films from './main.js';
-// import{porcentGender} from './data.js';
-// export const films = mainmovies ;
+import dataBase from './data/ghibli/ghibli.js';
+const base = dataBase.films;
 
+/*borrar los índices repetidos en los directores*/
+const graphicStatsxDirector = base.map(item => item.director);
+const nameNoDuplicate = graphicStatsxDirector.filter((item, index) => {
+    return graphicStatsxDirector.indexOf(item) === index;})
 
-// let arrayForGender= [];
-// let count =[];
-// for(let element of porcentGender(films,2023) ){
-//   arrayForGender.push(element.gender);
-//   count.push(element.valor);
-// }
-// const secondGraphic = new Chart(graphicForGender, {
-//     type: "pie",
-//     data:{
-//         labels:arrayForGender,
-//         datasets:[
-//             {
-//                 label:'Género',
-//                 data: [964,1054],
-//                 backgroundColor:['rgb(216, 133, 163)','rgb(120, 151, 171)']
-//             },
-//         ],
-//     },
-//     options:{
-//         maintainAspectRatio:false,
-//         plugins: {
-//             title:{
-//                 display:true,
-//                 align:'center',
-//                 position:'top',
-//                 text:`Participantes por género: Mujeres: ${count[0]}%, Hombres:${count[1]}%`,
-//                 font:{
-//                     size:20,
-//                     family:"Delius",
-//                 },
-//             },
-//             legend: {
-//               position: "top",
-//             }
-//           }
-//     },
-// }
-// )
-//import "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js";
+/*contabilizar las películas de acuerdo a los nombres*/
+const countMoviexDirector = graphicStatsxDirector.reduce((counter, name) => {
+    if (counter[name]) {
+    counter[name] = counter[name] + 1;
+    }else{
+    counter[name] = 1;
+    }
+    return counter;
+}, {});
 
-// import data from './data/ghibli/ghibli.js';
-// const datas = data.films;
+const stadisticsGraphicDirector = document.querySelector("#stadistics_graphic_director").getContext("2d");
+function totalMoviexDirector(number){
 
-// function totalPeoplexGener(stdscore){
-//     const {rt_score, title} = datas; //solicitamos la info de la data
-// const chart = new Chart(stdscore, {
-//     type:"bar",
-//     data:{
-//         labels: datas.title.map(item => item.title), //cabecera
-//         datasets:[
-//         {   
-//             label: "Puntuación", //titulo
-//             backgroundColor: "#4DF4FF",
-//             borderColor: "#ff5Ab0",
-//             data: parseInt(rt_score).map(item => item.rt_score), //cantidad del peliculas
-//         }
-//     ]
-// }
-// })
-// }
-// function renderCharts(){
-// const stadisticsGraphicGener = document.querySelector("#stadistics_graphic_gener").getContext("2d");
-// totalPeoplexGener(stadisticsGraphicGener);
-// }
-// renderCharts()
+const chart = new Chart(number, {
+    type:"bar",
+    data:{
+        labels:nameNoDuplicate, //cabecera
+        datasets:[
+        {
+            label: "Cantidad de películas dirigidas", //titulo
+            backgroundColor: "#f7b773",
+            borderColor: "#f7b773",
+            data: countMoviexDirector //cantidad del peliculas
+        }
+        ]
+}
+})
+}
+totalMoviexDirector(stadisticsGraphicDirector);
+
+/*stats productores*/
+const graphicStatsxProductor = base.map(item => item.producer);
+const nameNoDuplicateProd = graphicStatsxProductor.filter((item, index) => {
+    return graphicStatsxProductor.indexOf(item) === index;})
+
+const countMoviexProductor = graphicStatsxProductor.reduce((counter, name) => {
+    if (counter[name]) {
+    counter[name] = counter[name] + 1;
+    }else{
+    counter[name] = 1;
+    }
+    return counter;
+}, {});
+console.log(countMoviexProductor)
+const stadisticsGraphicProductor = document.querySelector("#stadistics_graphic_productor");
+function totalMoviexProductor(num){
+
+const chart = new Chart(num, {
+    type:"line",
+    data:{
+        labels:nameNoDuplicateProd, //cabecera
+        datasets:[
+        {
+            label: "Cantidad de películas producidas", //titulo
+            backgroundColor: "#99FFCD",
+            borderColor: "#9FB4FF",
+            data: countMoviexProductor //cantidad del peliculas
+        }
+    ]
+}
+})
+}
+totalMoviexProductor(stadisticsGraphicProductor);

@@ -1,5 +1,6 @@
 import data from './data/ghibli/ghibli.js';
 import { sortData, sortMovieRanking, filterMoviexProducer} from './data.js';
+//import { graphicStats } from './stadistics.js'
 const films = data.films;
 const mainmovies = document.querySelector("main");
 
@@ -169,3 +170,10 @@ const selectRankingMovies = document.querySelector("#input_publication3");
 selectRankingMovies.addEventListener("change", () => {
     showInfoMovies(sortMovieRanking(films,selectRankingMovies.value))
 });
+
+/*Muestra datos estadísticos*/
+/*const showEstadistic = document.getElementById("content-stadistics");
+showEstadistic.addEventListener("click", () => {
+    showEstadistic(graphicStats(films, showEstadistic.value))
+});
+*/

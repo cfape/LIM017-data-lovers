@@ -405,6 +405,7 @@ main .card{
 /*gráfico de Estadísticas*/
 #content-stadistics{
 	margin: 100px;
+	margin-top: 250px;
 	width:auto;
 	height:auto;
 	background-color: #f7fed4;
@@ -588,6 +589,7 @@ nav {
 	#table-info {
 		display: grid;
 		width:85%;
+		height: 650px;
 		padding-left: 5px;
 		padding-right: 5px;
 		margin-left: 20px;
@@ -934,7 +936,25 @@ main .card{
 	margin: auto;
 }
 #content-stadistics{
-	display: none;
+	display: visibility;
+	padding: 10px;
+	margin-top: 10px;
+	margin: 100px;
+	width:auto;
+	height:auto;
+	background-color: #f7fed4;
+}
+#content-stadistics, p {
+	margin-top: 0px;
+}
+#stadistics_graphic_director{
+	margin: 100px;
+	width:auto;
+	height:auto;
+	background-color: #f7fed4;
+}
+
+#stadistics_graphic_productor{
 	margin: 100px;
 	width:auto;
 	height:auto;
@@ -945,5 +965,6 @@ main .card{
 /* visibility: hidden; */
 	font-family: "Short stack", cursiva;
 	padding: 40px;
+	margin-top: 40px;
 }
 }

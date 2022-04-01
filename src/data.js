@@ -1,4 +1,4 @@
-//  import films from './main.js';
+
 
 /*objeto ordena ascendente y descendente*/
 export const sortData = (data,sortOrder) => {
@@ -73,10 +73,3 @@ export const filterMoviexProducer = (films, nameProducer) => {
 };
 
 
-//Objeto computeStats Producer
-//Producer
-export const computeStats = (films) => {
-  if (films === undefined || typeof films !== 'object' || films === 0 || films === null|| films.length === 0) {
-    throw new TypeError('films is not an object');
-  }
-}
