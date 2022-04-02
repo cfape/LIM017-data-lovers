@@ -69,3 +69,22 @@ Se realizó la creación de prototipos en figma:
 
 ## 5. Desarrollo de interfaz
 
+### Plan de acción
+
+1. Nuestra prioridad fue darle todas las herramientas visuales y funcionales al usuarix, brindando una experiencia interactiva y con el contenido esperado en base a los resultados de nuestra investigación.
+
+2. Realizamos el desarrollo de la interfaz abordando las historias de usuarix en cada Sprint.
+
+<img src= "https://i.ibb.co/mtHc1tc/img0.jpg">
+<img src= "https://i.ibb.co/YN9m6RH/img1.jpg">
+<img src= "https://i.ibb.co/wdGkqRg/img2.jpg">
+<img src= "https://i.ibb.co/ccgQSYS/img3.jpg">
+<img src= "https://i.ibb.co/Vvjxgcb/img4.jpg">
+<img src= "https://i.ibb.co/P6CSzGv/img5.jpg">
+<img src= "https://i.ibb.co/cDtV1jy/img6.jpg">
+<img src= "https://i.ibb.co/BrRxsSv/img7.jpg">
+<img src= "https://i.ibb.co/dLk4Xnp/img8.jpg">
+
+### Testeos de usabilidad
+
+Los testeos de usabilidad fueron indispensables en el desarrollo del proyecto, puesto que en base a ellos logramos verificar que nuestras funciones implementadas en JavaScript se ejecutaban correctamente. Se creó una muestra de la data para poder implementar los test unitarios que nos permitan verificar con exactitud cada una de las pruebas.
