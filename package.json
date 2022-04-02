@@ -16,7 +16,6 @@
     "@babel/core": "^7.6.2",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "babel-jest": "^27.0.1",
-    "chart.js": "^3.7.1",
     "chat.js": "^1.0.2",
     "eslint": "^8.3.0",
     "gh-pages": "^3.1.0",
@@ -28,6 +27,7 @@
     "node": ">=14.x"
   },
   "devDependencies": {
+    "chart.js": "^3.7.1",
     "jest": "^27.5.1"
   }
 }

@@ -1,13 +1,13 @@
-import dataBase from './data/ghibli/ghibli.js';
-const base = dataBase.films;
+/*import dataBase from './data/ghibli/ghibli.js';
+const base = dataBase.films;/*
 
 /*borrar los índices repetidos en los directores*/
-const graphicStatsxDirector = base.map(item => item.director);
+/*const graphicStatsxDirector = base.map(item => item.director);
 const nameNoDuplicate = graphicStatsxDirector.filter((item, index) => {
-    return graphicStatsxDirector.indexOf(item) === index;})
+    return graphicStatsxDirector.indexOf(item) === index;})*/
 
 /*contabilizar las películas de acuerdo a los nombres*/
-const countMoviexDirector = graphicStatsxDirector.reduce((counter, name) => {
+/*const countMoviexDirector = graphicStatsxDirector.reduce((counter, name) => {
     if (counter[name]) {
     counter[name] = counter[name] + 1;
     }else{
@@ -34,10 +34,10 @@ const chart = new Chart(number, {
 }
 })
 }
-totalMoviexDirector(stadisticsGraphicDirector);
+totalMoviexDirector(stadisticsGraphicDirector);*/
 
 /*stats productores*/
-const graphicStatsxProductor = base.map(item => item.producer);
+/*const graphicStatsxProductor = base.map(item => item.producer);
 const nameNoDuplicateProd = graphicStatsxProductor.filter((item, index) => {
     return graphicStatsxProductor.indexOf(item) === index;})
 
@@ -49,7 +49,7 @@ const countMoviexProductor = graphicStatsxProductor.reduce((counter, name) => {
     }
     return counter;
 }, {});
-console.log(countMoviexProductor)
+//console.log(countMoviexProductor)
 const stadisticsGraphicProductor = document.querySelector("#stadistics_graphic_productor");
 function totalMoviexProductor(num){
 
@@ -69,3 +69,4 @@ const chart = new Chart(num, {
 })
 }
 totalMoviexProductor(stadisticsGraphicProductor);
+*/
