@@ -171,9 +171,3 @@ selectRankingMovies.addEventListener("change", () => {
     showInfoMovies(sortMovieRanking(films,selectRankingMovies.value))
 });
 
-/*Muestra datos estadísticos*/
-/*const showEstadistic = document.getElementById("content-stadistics");
-showEstadistic.addEventListener("click", () => {
-    showEstadistic(graphicStats(films, showEstadistic.value))
-});
-*/
