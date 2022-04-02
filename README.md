@@ -50,18 +50,22 @@ En función a nuestra investigación, se crearon las siguientes **Historias de u
 ## 4. Diseño de la interfaz de usuario UI
 ### Prototipo de baja fidelidad
 
-Hemos realizado dos prototipos a mano alzada para plasmar los requerimientos solicitados para el desarrollo de la interfaz de usuario.
+Se realizó el diseño de dos prototipos a mano alzada para plasmar los requerimientos solicitados para el desarrollo de la interfaz de usuario.
 
-<img src= "https://i.ibb.co/dtQCtFk/Whats-App-Image-2022-04-02-at-12-45-10-PM.jpg">
-<img src= "https://i.ibb.co/0ht1z4m/Whats-App-Image-2022-04-02-at-12-57-36-PM.jpg">
+<center><img src= "https://i.ibb.co/dtQCtFk/Whats-App-Image-2022-04-02-at-12-45-10-PM.jpg"></center>
+<center><img src= "https://i.ibb.co/0ht1z4m/Whats-App-Image-2022-04-02-at-12-57-36-PM.jpg"></center>
 
 ### Prototipo de alta fidelidad
 
-Hemos realizado prototipos para versiones de móvil como desktop.
+Se realizó la creación de prototipos en figma:
 
-<img src= "https://www.figma.com/proto/diC2zMmFbEsaXMEtirBA6Z/Studio-Ghibli?node-id=72%3A21&scaling=scale-down&page-id=12%3A18&starting-point-node-id=48%3A3">
-<img src= "https://www.figma.com/proto/diC2zMmFbEsaXMEtirBA6Z/Studio-Ghibli?node-id=1%3A2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A2">
+* Para móvil
+<img src= "https://i.ibb.co/7p3M6Cw/celular0.jpg">
+<img src= "https://i.ibb.co/QY6mw4S/celular1.jpg">
 
+* Para desktop
+<img src= "https://i.ibb.co/QQDmWm9/pc.jpg">
+<img src= "https://i.ibb.co/HBbFgK4/pc0.jpg">
 
 ## 5. Desarrollo de interfaz
 
