@@ -22,9 +22,13 @@ describe('filterMoviexProducer', () => {
   it('Devuelve un array siempre', () => {
     expect(filterMoviexProducer(dataFilms, "producer")instanceof Array).toBe(true);
   });
-  it('Devuelve las animaciones del productor', () => {
+  it('Devuelve el resultado', () => {
     const result = filterMoviexProducer(dataFilms, "Hayao Miyazaki")
     expect(result.length).toBe(1);
+  });
+  it('Devuelve el nombre del productor', () => {
+    const result = filterMoviexProducer(dataFilms, "Hayao Miyazaki")
+    expect(result).toBeTruthy();
   });
 });
 
@@ -35,6 +39,10 @@ describe('filterYearPublished', () => {
   it('Devuelve el año de publicación', () => {
     const result = filterYearPublished(dataFilms, "1986")
     expect(result.length).toBe(1);
+  });
+  it('Devuelve el año de publicación', () => {
+    const result = filterYearPublished(dataFilms, "1986")
+    expect(result).toBeTruthy();
   });
 });
 
@@ -69,7 +77,7 @@ describe('sortData', () => {
     const result = sortData(dataFilms, "Mi vecino Totoro")
     expect(result).toBeTruthy();
   });
-  it('Es un título definido', () => {
+  it('Es un resultado con dato definido', () => {
     expect(sortData).toBeDefined();
   });
 });
