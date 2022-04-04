@@ -353,7 +353,7 @@ main .card{
 }
 
 .aside{
-	padding: 30px;
+	padding: 0px;
 	height: 86vh;
 	display: flex;
 	flex-direction: column;
@@ -743,7 +743,7 @@ main .card{
 	}
 
 .aside{
-	padding: 30px;
+	padding: 0px;
 	height: 0vh;
 	display: flex;
 	flex-direction: column;
