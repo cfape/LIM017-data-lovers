@@ -324,7 +324,7 @@ main{
 	margin-left: 20px;
 }
 audio{
-	display: none;
+	display: visibility;
 	width: 12em;
 	height: 21px;
 	margin-left: -50em;
@@ -720,7 +720,7 @@ audio{
 	height: 21px;
 	margin-left: -50em;
 	margin-right: 5em;
-	display: none;
+	display: visibility;
 	}
 main .card{
 	box-shadow: 0 0 9px 0 #c4c3c3;

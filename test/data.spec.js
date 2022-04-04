@@ -19,9 +19,6 @@ const dataFilms =  [
     ]
 
 describe('filterMoviexProducer', () => {
-  it('Devuelve un array siempre', () => {
-    expect(filterMoviexProducer(dataFilms, "producer")instanceof Array).toBe(true);
-  });
   it('Devuelve el resultado', () => {
     const result = filterMoviexProducer(dataFilms, "Hayao Miyazaki")
     expect(result.length).toBe(1);
@@ -41,9 +38,8 @@ describe('filterYearPublished', () => {
       "director": "Hayao Miyazaki",
       "producer": "Isao Takahata",
       "release_date": "1986",
-      "rt_score": "95"
-    },
-    ]
+      "rt_score": "95"},
+      ]
     expect(result).toEqual(resultExpected);
   })
 });
@@ -71,6 +67,28 @@ describe('sortMovieRanking', () => {
       ]
       expect(result).toEqual(resultExpected);
       });
+    it('No hay retorno de información', () => {
+      const result = sortMovieRanking(dataFilms, "Mejores rankeadas")
+      const resultExpected = [
+        {
+          id: '2baf70d1-42bb-4437-b551-e5fed5a87abe',
+          title: 'El castillo en el cielo',
+          director: 'Hayao Miyazaki',
+          producer: 'Isao Takahata',
+          release_date: '1986',
+          rt_score: '95'
+        },
+        {
+          id: '58611129-2dbc-4a81-a72f-77ddfc1b1b49',
+          title: 'Mi vecino Totoro',
+          director: 'Hayao Miyazaki',
+          producer: 'Hayao Miyazaki',
+          release_date: '1988',
+          rt_score: '93'
+        }
+      ];
+      expect(result).toEqual(resultExpected);
+      })
   });
 
 describe('sortData', () => {
