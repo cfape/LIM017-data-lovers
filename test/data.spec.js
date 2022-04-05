@@ -45,7 +45,7 @@ describe('filterYearPublished', () => {
 });
 
 describe('sortMovieRanking', () => {
-    it('Devuelve el orden del puntaje de las película', () => {
+    it('Devuelve el puntaje de menor a mayor', () => {
       const result = sortMovieRanking(dataFilms, "Menos rankeadas")
       const resultExpected = [
         {
@@ -67,7 +67,7 @@ describe('sortMovieRanking', () => {
       ]
       expect(result).toEqual(resultExpected);
       });
-    it('No hay retorno de información', () => {
+    it('Devuelve por puntaje mayor a menor', () => {
       const result = sortMovieRanking(dataFilms, "Mejores rankeadas")
       const resultExpected = [
         {
@@ -113,8 +113,8 @@ describe('sortData', () => {
       }
     ]
     expect(result).toEqual(resultExpected);
-  });
-  it('Devuelve el orden de la película de Z-A', () => {
+});
+    it('Devuelve el orden de la película Z-A', () => {
     const result = sortData(dataFilms, "Z-A")
     const resultExpected = [
       {
